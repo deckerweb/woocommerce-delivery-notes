@@ -31,7 +31,7 @@ Credit where credit is due: This plugin here is inspired and based on the work o
 = Contribute =
 Since this is a fork I've made the plugin available in a developer repository at GitHub just like the original.
 
-* [Forked WooCommerce Delivery Notes repository at GitHub.com](https://github.com/deckerweb)
+* [Forked WooCommerce Delivery Notes repository at GitHub.com](https://github.com/deckerweb/woocommerce-delivery-notes)
 * [Original Jigoshop Delivery Notes repository at GitHub.com](https://github.com/piffpaffpuff/jigoshop-delivery-notes)
 * Thank you in advance for all feedback, suggestions, contributions/commits!
 
