@@ -1,0 +1,290 @@
+/**
+ * @description	WooCommerce Delivery Notes styles
+ * @since	1.0
+ *
+ * @author	David Decker - DECKERWEB
+ * @author-link	http://deckerweb.de/
+ * @copyright	Copyright 2011, David Decker - DECKERWEB
+ * @license	GPLv2
+ * @package	WooCommerceDeliveryNotes
+ */
+
+/* Table of Contents
+
+* CSS Reset
+* Delivery Note Page Layout
+* CSS Media Queries for Print
+*
+* Import Fonts
+* CSS Media Queries for Print
+* Print Page Layout
+
+*/
+
+/* CSS Reset (Do not edit)
+------------------------------------------*/
+
+/**
+ * @link	http://meyerweb.com/eric/tools/css/reset/ 
+ * @version	v2.0 | 20110126
+ * @license	none (public domain)
+ */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, table {
+	border: 0 none;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Delivery Note Page Layout
+------------------------------------------*/
+
+/**
+ * Edit all the following rules to your needs
+ */
+
+body {
+	background: #fff;
+	color: #000;
+	font-family: sans-serif;
+	font-size: .875em;
+	line-height: 125%;
+}
+
+td,
+th {
+	border: 1px #ccc solid;
+	padding: 3px 5px;
+	vertical-align: top;
+}
+
+th {
+	color: #000;
+	font-weight: 700;
+}
+
+#container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 80px;
+	padding-right: 80px;
+	padding-top: 40px;
+	text-align: left;
+	width: 900px;
+}
+
+#header,
+#footer {
+	overflow: hidden;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+#footer {
+	margin-top: 40px;
+}
+
+/* Options link - "Print Page" */
+.options a {
+	background-color: #f2f2f2;
+	border: 1px solid #bbb;
+	border-radius: 11px;
+	-webkit-border-radius: 11px;
+	-moz-border-radius: 11px;
+	color: #000;
+	display: block;
+	float: right;
+	font-size: .90em;
+	height: 22px;
+	line-height: 22px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-decoration: none;
+}
+
+.options a:active {
+	background-color: #eee;
+	border: 1px solid #666;
+}
+
+#wcdn-head,
+#order-items,
+#order-summary {
+	margin-bottom: 60px;
+}
+
+#order-info {
+	margin-bottom: 100px;
+}
+
+#wcdn-head,
+#order-info,
+#order-summary,
+#order-notes {
+	overflow: hidden;
+}
+
+/* Delivery Notes Head - #wcdn-head */
+#wcdn-head .wcdn-heading {
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	font-size: 1.1em;
+	font-weight: 700;
+	margin-bottom: 15px;
+	padding: 9px 0 6px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+#wcdn-head div {
+	width: 400px;
+}
+
+#wcdn-head .company-name {
+	float: left;
+	font-size: 2.5em;
+	line-height: 125%;
+}
+
+#wcdn-head .company-info {
+	float: right;
+	text-align: right;
+}
+
+/* Order Listing/Info - #order-listing */
+#order-listing h3 {
+	font-size: 1.1em;
+	font-weight: 700;
+}
+
+#order-listing .shipping-info {
+	float: left;
+	margin-left: 20px;
+	width: 350px;
+}
+
+#order-listing table {
+	float: right;
+	width: 350px;
+}
+
+#order-listing th {
+	width: 165px;
+}
+
+/* Order Items - #order-items */
+#order-items {
+	clear: both;
+	margin-top: 20px;
+}
+
+#order-items table {
+	width: 100%;
+}
+
+#order-items .description {
+	width: 539px;
+}
+
+#order-items .quantity {
+	width: 165px;
+}
+
+#order-items .sku,
+#order-items .weight {
+	color: #666;
+	font-size: 0.85em;
+	font-style: italic;
+	margin-left: 15px;
+}
+
+/* Order Summary - #order-summary */
+#order-summary table {
+	float: right;
+	width: 350px;
+}
+
+#order-summary th {
+	width: 165px;
+}
+
+#order-summary #total-label,
+#order-summary #total-number {
+	border-top: 2px solid #999;
+	border-bottom: 3px solid #999;
+	padding-top: 7px;
+}
+
+
+/* Order Notes - #order-notes */
+#order-notes {
+	border-top: 1px solid #ccc;
+	margin-top: 60px;
+	padding-top: 10px;
+}
+
+#order-notes .notes-personal,
+#order-notes .notes-shipping,
+#order-notes .notes-policies {
+	margin-bottom: 20px;
+}
+
+#order-notes .notes-personal {
+	color: #666;
+	font-size: 1.2em;
+	font-style: italic;
+	padding: 10px 20px;
+	/* text-align: center; */
+}
+
+#order-notes .notes-shipping,
+#order-notes .notes-policies {
+	color: #444;
+	/* float: left; */
+	font-size: .95em;
+	line-height: 125%;
+	/* width: 350px; */
+}
+
+/* Footer Imprint - #wcdn-footer */
+#wcdn-footer {
+	border-top: 1px solid #ccc;
+	padding: 10px 20px;
+}
+
+#wcdn-footer .wcdn-footer-imprint {
+	color: #666;
+	float: right;
+	font-size: .80em;
+	font-style: italic;
+	text-align: right;
+}
+
+
+/* CSS Media Queries for Print
+------------------------------------------*/
+
+@media print {
+	#header,
+	#footer {
+		display: none;
+	}
+}
