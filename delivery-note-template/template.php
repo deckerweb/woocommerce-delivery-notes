@@ -16,7 +16,7 @@
 		<div id="header">
 			<div class="options">
 				<a href="#print" onclick="javascript:openPrintWindow();return false;"><?php _e( 'Print Page', 'woocommerce-delivery-notes' ); ?></a>
-			</div><!-- .entry-content -->
+			</div><!-- .options -->
 		</div><!-- #header -->
 
 		<div id="content">			
@@ -30,7 +30,7 @@
 							echo wcdn_company_name();
 						} ?></div>
 					<div class="company-info"><?php echo wcdn_company_info(); ?></div>
-				</div>
+				</div><!-- #wcdn-head -->
 				
 				<div id="order-listing">
 					<h3><?php _e( 'Recipient:', 'woocommerce-delivery-notes' ); ?></h3>
@@ -71,9 +71,11 @@
 						<tfoot>
 							<?php $items = wcdn_get_order_items(); foreach( $items as $item ) : ?><tr>
 								<td class="description"><?php echo $item['name']; ?><?php if( $item['variation'] ) : ?> <span class="variation"><?php echo $item['variation']; ?></span><?php endif; ?>
-<?php if( $item['sku'] || $item['weight'] ) : ?><br /><?php endif; ?><?php if( $item['sku'] ) : ?><span class="sku"><?php _e( 'SKU:', 'woocommerce-delivery-notes' ); ?> <?php echo $item['sku']; ?></span><?php endif; ?><?php if( $item['weight'] ) : ?><span class="weight"> <?php _e( 'Weight:', 'woocommerce-delivery-notes' ); ?> <?php echo $item['weight']; ?></span><?php endif; ?></td>
+<?php if( $item['sku'] || $item['weight'] ) : ?><br /><?php endif; ?><?php if( $item['sku'] ) : ?><span class="sku"><?php _e( 'SKU:', 'woocommerce-delivery-notes' ); ?> <?php echo $item['sku']; ?></span><?php endif; ?><?php if( $item['weight'] ) : ?><span class="weight"> <?php _e( 'Weight:', 'woocommerce-delivery-notes' );
+	echo '&nbsp;' . $item['weight'];
+	echo '&nbsp;' . get_option( 'woocommerce_weight_unit' ); ?></span><?php endif; ?></td>
 								<td class="quantity"><?php echo $item['quantity']; ?></td>
-								<td class="price"><?php echo $item['price'] ?></td>
+								<td class="price"><?php echo $item['price']; ?></td>
 							<tr><?php endforeach; ?>
 						</tfoot>
 					</table>
@@ -114,13 +116,19 @@
 	
 				<div id="order-notes">
 					<div class="notes-personal"><?php echo wcdn_personal_notes(); ?></div>
-					<div class="notes-shipping"><?php echo wcdn_shipping_notes(); ?></div>
+					<div class="notes-shipping"><?php
+						if ( wcdn_shipping_notes() ) {
+							echo '<h3>' . __( 'Customer Notes:', 'woocommerce-delivery-notes' ) . '</h3>';
+							echo '<br />';
+						}
+
+						echo wcdn_shipping_notes(); ?></div>
 					<div class="notes-policies"><?php echo wcdn_policies_conditions(); ?></div>
-				</div>
+				</div><!-- #order-notes -->
 
 				<div id="wcdn-footer">
 					<div class="wcdn-footer-imprint"><?php echo wcdn_footer_imprint(); ?></div>
-				</div>
+				</div><!-- #wcdn-footer -->
 			</div><!-- #page -->
 		</div><!-- #content -->
 		

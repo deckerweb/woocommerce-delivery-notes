@@ -2,10 +2,14 @@
 /**
  * Load all available data for the Delivery Notes printing page.
  *
- * @package  WooCommerce Delivery Notes
- * @author   David Decker - DECKERWEB
- * @license  http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)
- * @link     http://genesisthemes.de/en/wp-plugins/
+ * @package   WooCommerce Delivery Notes
+ * @author    David Decker - DECKERWEB
+ * @copyright Copyright 2011-2012, David Decker - DECKERWEB
+ * @license   http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)
+ * @link      http://genesisthemes.de/en/wp-plugins/woocommerce-delivery-notes/
+ * @link      http://twitter.com/#!/deckerweb
+ *
+ * @since 1.0
  */
 
 /**
@@ -73,11 +77,14 @@ if ( !function_exists( 'wcdn_company_name' ) ) {
  * Return custom title name of Delivery Note (= custom title)
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string company name
  */
 if ( !function_exists( 'wcdn_custom_company_name' ) ) {
 	function wcdn_custom_company_name() {
 		global $wcdn_print;
-		return wpautop( wptexturize( $wcdn_print->get_setting( 'custom_company_name' ) ) );
+		return wpautop( wp_kses_stripslashes( $wcdn_print->get_setting( 'custom_company_name' ) ) );
 	}
 }
 
@@ -86,6 +93,9 @@ if ( !function_exists( 'wcdn_custom_company_name' ) ) {
  * Return shop/company info if provided
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string company address
  */
 if (!function_exists( 'wcdn_company_info' ) ) {
 	function wcdn_company_info() {
@@ -99,6 +109,9 @@ if (!function_exists( 'wcdn_company_info' ) ) {
  * Return shipping name
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string shipping name
  */
 if ( !function_exists( 'wcdn_shipping_name' ) ) {
 	function wcdn_shipping_name() {
@@ -112,6 +125,9 @@ if ( !function_exists( 'wcdn_shipping_name' ) ) {
  * Return shipping company
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string shipping company
  */
 if ( !function_exists( 'wcdn_shipping_company' ) ) {
 	function wcdn_shipping_company() {
@@ -125,6 +141,9 @@ if ( !function_exists( 'wcdn_shipping_company' ) ) {
  * Return shipping address 1
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string shipping address
  */
 if ( !function_exists( 'wcdn_shipping_address_1' ) ) {
 	function wcdn_shipping_address_1() {
@@ -138,6 +157,9 @@ if ( !function_exists( 'wcdn_shipping_address_1' ) ) {
  * Return shipping address 2
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string shipping address 2
  */
 if ( !function_exists( 'wcdn_shipping_address_2' ) ) {
 	function wcdn_shipping_address_2() {
@@ -151,6 +173,9 @@ if ( !function_exists( 'wcdn_shipping_address_2' ) ) {
  * Return shipping city
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string shipping city
  */
 if ( !function_exists( 'wcdn_shipping_city' ) ) {
 	function wcdn_shipping_city() {
@@ -164,6 +189,9 @@ if ( !function_exists( 'wcdn_shipping_city' ) ) {
  * Return shipping state
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string shipping state
  */
 if ( !function_exists( 'wcdn_shipping_state' ) ) {
 	function wcdn_shipping_state() {
@@ -177,6 +205,9 @@ if ( !function_exists( 'wcdn_shipping_state' ) ) {
  * Return shipping postcode
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string shipping postcode
  */
 if ( !function_exists( 'wcdn_shipping_postcode' ) ) {
 	function wcdn_shipping_postcode() {
@@ -190,6 +221,9 @@ if ( !function_exists( 'wcdn_shipping_postcode' ) ) {
  * Return shipping country
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string shipping country
  */
 if ( !function_exists( 'wcdn_shipping_country' ) ) {
 	function wcdn_shipping_country() {
@@ -203,6 +237,9 @@ if ( !function_exists( 'wcdn_shipping_country' ) ) {
  * Return shipping notes
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string shipping notes
  */
 if ( !function_exists( 'wcdn_shipping_notes' ) ) {
 	function wcdn_shipping_notes() {
@@ -216,6 +253,9 @@ if ( !function_exists( 'wcdn_shipping_notes' ) ) {
  * Return order id
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string order id
  */
 if ( !function_exists( 'wcdn_order_number' ) ) {
 	function wcdn_order_number() {
@@ -228,12 +268,15 @@ if ( !function_exists( 'wcdn_order_number' ) ) {
  * Return the order date
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string order date
  */
 if ( !function_exists( 'wcdn_order_date')) {
 	function wcdn_order_date() {
 		global $wcdn_print;
 		$order = $wcdn_print->get_order( $_GET['order'] );
-		return date( get_option( 'date_format' ), strtotime( $order->order_date ) );
+		return date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) );
 	}
 }
 
@@ -242,6 +285,9 @@ if ( !function_exists( 'wcdn_order_date')) {
  * Return the order items
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return strings order items
  */
 if ( !function_exists( 'wcdn_get_order_items' ) ) {
 	function wcdn_get_order_items() {
@@ -255,6 +301,9 @@ if ( !function_exists( 'wcdn_get_order_items' ) ) {
  * Return the order items price
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string items price
  */
 if ( !function_exists( 'wcdn_format_price' ) ) {
 	function wcdn_format_price( $price, $tax_rate = 0 ) {
@@ -268,6 +317,9 @@ if ( !function_exists( 'wcdn_format_price' ) ) {
  * Return the order subtotal
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string order subtotal
  */
 if ( !function_exists( 'wcdn_order_subtotal' ) ) {
 	function wcdn_order_subtotal() {
@@ -281,6 +333,9 @@ if ( !function_exists( 'wcdn_order_subtotal' ) ) {
  * Return the order tax
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string order tax
  */
 if ( !function_exists( 'wcdn_order_tax' ) ) {
 	function wcdn_order_tax() {
@@ -291,9 +346,12 @@ if ( !function_exists( 'wcdn_order_tax' ) ) {
 
 
 /**
- * Return the order shipping
+ * Return the order shipping cost
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string order shipping cost
  */
 if ( !function_exists( 'wcdn_order_shipping' ) ) {
 	function wcdn_order_shipping() {
@@ -307,6 +365,9 @@ if ( !function_exists( 'wcdn_order_shipping' ) ) {
  * Return the order discount
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string order discount
  */
 if ( !function_exists( 'wcdn_order_discount' ) ) {
 	function wcdn_order_discount() {
@@ -320,6 +381,9 @@ if ( !function_exists( 'wcdn_order_discount' ) ) {
  * Return the order grand total
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string grand total
  */
 if ( !function_exists( 'wcdn_order_total' ) ) {
 	function wcdn_order_total() {
@@ -333,6 +397,9 @@ if ( !function_exists( 'wcdn_order_total' ) ) {
  * Return if the order has a shipping
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return boolean
  */
 if ( !function_exists( 'wcdn_has_shipping' ) ) {
 	function wcdn_has_shipping() {
@@ -346,6 +413,9 @@ if ( !function_exists( 'wcdn_has_shipping' ) ) {
  * Return if the order has a tax
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return boolean
  */
 if ( !function_exists( 'wcdn_has_tax' ) ) {
 	function wcdn_has_tax() {
@@ -359,6 +429,9 @@ if ( !function_exists( 'wcdn_has_tax' ) ) {
  * Return if the order has a discount
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return boolean
  */
 if ( !function_exists( 'wcdn_has_discount' ) ) {
 	function wcdn_has_discount() {
@@ -372,6 +445,9 @@ if ( !function_exists( 'wcdn_has_discount' ) ) {
  * Return personal notes, season greetings etc.
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string personal notes
  */
 if ( !function_exists( 'wcdn_personal_notes' ) ) {
 	function wcdn_personal_notes() {
@@ -385,6 +461,9 @@ if ( !function_exists( 'wcdn_personal_notes' ) ) {
  * Return policy for returns
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string policy
  */
 if ( !function_exists( 'wcdn_policies_conditions' ) ) {
 	function wcdn_policies_conditions() {
@@ -398,6 +477,9 @@ if ( !function_exists( 'wcdn_policies_conditions' ) ) {
  * Return shop/company footer imprint, copyright etc.
  *
  * @since 1.0
+ *
+ * @global $wcdn_print
+ * @return string footer imprint
  */
 if ( !function_exists( 'wcdn_footer_imprint' ) ) {
 	function wcdn_footer_imprint() {

@@ -2,10 +2,15 @@
 /**
  * Load help tabs for admin settings page and support links on plugins listing page.
  *
- * @package  WooCommerce Delivery Notes
- * @author   David Decker - DECKERWEB
- * @license  http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)
- * @link     http://genesisthemes.de/en/wp-plugins/
+ * @package    WooCommerce Delivery Notes
+ * @subpackage Help
+ * @author     David Decker - DECKERWEB
+ * @copyright  Copyright 2011-2012, David Decker - DECKERWEB
+ * @license    http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)
+ * @link       http://genesisthemes.de/en/wp-plugins/woocommerce-delivery-notes/
+ * @link       http://twitter.com/#!/deckerweb
+ *
+ * @since 1.0
  */
 
 add_filter( 'plugin_row_meta', 'ddw_wcdn_plugin_links', 10, 2 );
@@ -13,6 +18,10 @@ add_filter( 'plugin_row_meta', 'ddw_wcdn_plugin_links', 10, 2 );
  * Add various support links to plugin page
  *
  * @since 1.0
+ *
+ * @param  $wcdn_links
+ * @param  $wcdn_file
+ * @return strings plugin links
  */
 function ddw_wcdn_plugin_links( $wcdn_links, $wcdn_file ) {
 
@@ -29,12 +38,13 @@ function ddw_wcdn_plugin_links( $wcdn_links, $wcdn_file ) {
 }
 
 
-
 add_action( 'admin_menu', 'ddw_wcdn_help_tab_init', 15 );
 /**
  * Load help tab on settings page
  *
  * @since 1.0
+ *
+ * global $_wcdn_settings_pagehook
  */
 function ddw_wcdn_help_tab_init() {
 
@@ -50,6 +60,8 @@ function ddw_wcdn_help_tab_init() {
  * Set up the help tab titles for the settings page - for WordPress 3.3 and higher
  *
  * @since 1.0
+ *
+ * global $_wcdn_settings_pagehook
  */
 function ddw_wcdn_help_tabs() {
 
@@ -100,8 +112,10 @@ function ddw_wcdn_help_tabs() {
  * Add the actual help tabs content for the settings page - for WordPress 3.3 and higher
  *
  * @since 1.0
+ *
+ * @return help tab strings
  */
-function ddw_wcdn_help_tab_content( $tab = 'wcdn-usage' ) {
+function ddw_wcdn_help_tab_content( $tab = 'wcdn-usage' ) {	// Tab general info
 	if ( $tab == 'wcdn-usage' ) {
 
 		ob_start();
@@ -113,7 +127,7 @@ function ddw_wcdn_help_tab_content( $tab = 'wcdn-usage' ) {
 
 		return ob_get_clean();
 
-	} elseif ( $tab == 'wcdn-faq' ) {
+	} elseif ( $tab == 'wcdn-faq' ) {	// Tab FAQ area
 
 		ob_start();
 			echo '<h3>' . __( 'Plugin: WooCommerce Delivery Notes', 'woocommerce-delivery-notes' ) . '</h3>';
@@ -138,7 +152,7 @@ function ddw_wcdn_help_tab_content( $tab = 'wcdn-usage' ) {
 
 		return ob_get_clean();
 
-	} elseif ( $tab == 'wcdn-support-donation-rating-tips' ) {
+	} elseif ( $tab == 'wcdn-support-donation-rating-tips' ) {	// Tab support, donation, rating, tips
 
 		ob_start();
 			echo '<h3>' . __( 'Plugin: WooCommerce Delivery Notes', 'woocommerce-delivery-notes' ) . '</h3>';
@@ -150,7 +164,7 @@ function ddw_wcdn_help_tab_content( $tab = 'wcdn-usage' ) {
 
 		return ob_get_clean();
 
-	} elseif ( $tab == 'wcdn-author-license' ) {
+	} elseif ( $tab == 'wcdn-author-license' ) {	// Tab author and license
 
 		ob_start();
 			echo '<h3>' . __( 'Plugin: WooCommerce Delivery Notes', 'woocommerce-delivery-notes' ) . '</h3>';
@@ -161,6 +175,6 @@ function ddw_wcdn_help_tab_content( $tab = 'wcdn-usage' ) {
 
 		return ob_get_clean();
 
-	}
+	}  // end elseif
 
-}
+}  // end of function ddw_wcdn_help_tab_content

@@ -1,12 +1,16 @@
 /**
  * @description	WooCommerce Delivery Notes styles
+ *
  * @since	1.0
+ * @version	1.1
+ *
+ * @package	WooCommerce Delivery Notes
+ * @subpackage  Template
  *
  * @author	David Decker - DECKERWEB
- * @author-link	http://deckerweb.de/
- * @copyright	Copyright 2011, David Decker - DECKERWEB
+ * @link	http://deckerweb.de/
+ * @copyright	Copyright 2011-2012, David Decker - DECKERWEB
  * @license	GPLv3
- * @package	WooCommerce Delivery Notes
  */
 
 /* Table of Contents
@@ -54,8 +58,12 @@ table {
 
 /**
  * Edit all the following rules to your needs
+ *
+ * For having your custom template in your theme please see the FAQ section:
+ * @link http://wordpress.org/extend/plugins/woocommerce-delivery-notes/faq/
  */
 
+/* Main Body */
 body {
 	background: #fff;
 	color: #000;
@@ -64,6 +72,7 @@ body {
 	line-height: 125%;
 }
 
+/* Basic Table Styling */
 td,
 th {
 	border: 1px #ccc solid;
@@ -76,6 +85,7 @@ th {
 	font-weight: 700;
 }
 
+/* Main Sections of the Page */
 #container {
 	margin-left: auto;
 	margin-right: auto;
@@ -120,6 +130,7 @@ th {
 	border: 1px solid #666;
 }
 
+/* Special Margin & Overflow Stylings */
 #wcdn-head,
 #order-items,
 #order-summary {
@@ -248,16 +259,14 @@ th {
 	font-size: 1.2em;
 	font-style: italic;
 	padding: 10px 20px;
-	/* text-align: center; */
 }
 
 #order-notes .notes-shipping,
 #order-notes .notes-policies {
 	color: #444;
-	/* float: left; */
+	float: left;
 	font-size: .95em;
 	line-height: 125%;
-	/* width: 350px; */
 }
 
 /* Footer Imprint - #wcdn-footer */

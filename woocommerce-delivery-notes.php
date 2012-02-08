@@ -2,8 +2,10 @@
 /**
  * Main plugin file. This plugin adds simple Delivery Notes for the WooCommerce Shop Plugin. You can add company/shop info as well as personal notes and policies to the print page.
  *
- * @package WooCommerceDeliveryNotes
- * @author David Decker
+ * @package   WooCommerce Delivery Notes
+ * @author    David Decker
+ * @link      http://twitter.com/#!/deckerweb
+ * @copyright Copyright 2011-2012, David Decker - DECKERWEB
  *
  * @credits Inspired and based on the plugin "Jigoshop Delivery Notes" by Steve Clark, Trigvvy Gunderson and PiffPaffPuff
  * @link http://www.clark-studios.co.uk/blog/
@@ -12,7 +14,7 @@
  * Plugin Name: WooCommerce Delivery Notes
  * Plugin URI: http://genesisthemes.de/en/wp-plugins/woocommerce-delivery-notes/
  * Description: This plugin adds simple Delivery Notes for the WooCommerce Shop Plugin. You can add company/shop info as well as personal notes and policies to the print page.
- * Version: 1.0
+ * Version: 1.1
  * Author: David Decker - DECKERWEB
  * Author URI: http://deckerweb.de/
  * License: GPLv3
@@ -29,12 +31,17 @@ define( 'WCDN_PLUGIN_DIR', dirname( __FILE__ ) );
 define( 'WCDN_PLUGIN_BASEDIR', dirname( plugin_basename( __FILE__ ) ) );
 
 
+add_action( 'init', 'ddw_wcdn_init' );
 /**
  * Load the text domain for translation of the plugin
  * 
  * @since 1.0
+ * @version 1.1
  */
-load_plugin_textdomain( 'woocommerce-delivery-notes', false, WCDN_PLUGIN_BASEDIR . '/languages' );
+function ddw_wcdn_init() {
+
+	load_plugin_textdomain( 'woocommerce-delivery-notes', false, WCDN_PLUGIN_BASEDIR . '/languages' );
+}
 
 
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__) , 'ddw_wcdn_settings_link' );
@@ -42,6 +49,10 @@ add_filter( 'plugin_action_links_' . plugin_basename(__FILE__) , 'ddw_wcdn_setti
  * Add "Settings" link to plugin page
  *
  * @since 1.0
+ *
+ * @param  $links
+ * @param  $ddw_wcdn_settings_link
+ * @return string settings link
  */
 function ddw_wcdn_settings_link( $links ) {
 

@@ -1,4 +1,4 @@
-# This German Language File: Copyright (C) 2011 by David Decker of deckerweb.de & genesisthemes.de
+# This German Language File: Copyright (C) 2011-2012 by David Decker of deckerweb.de & genesisthemes.de
 # This file is distributed under the same license as the WooCommerce Delivery Notes Plugin package.
 #
 # Weitere deutsche Sprachdateien fuer WooCommerce und WordPress sind hier zu finden:
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce Delivery Notes (Plugin, SIE-Version)\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/woocommerce-delivery-notes\n"
 "POT-Creation-Date: 2011-12-26 14:02+0100\n"
-"PO-Revision-Date: 2011-12-30 01:43+0100\n"
+"PO-Revision-Date: 2012-02-07 02:55+0100\n"
 "Last-Translator: David Decker <deckerweb.mobil@googlemail.com>\n"
 "Language-Team: DECKERWEB <deckerweb.mobil@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -26,13 +26,13 @@ msgstr ""
 #@ woocommerce-delivery-notes
 #: delivery-note-template/template.php:5
 #: delivery-note-template/template.php:25
-#: wcdn-classes.php:101
+#: wcdn-classes.php:105
 msgid "Delivery Note"
 msgstr "Lieferschein"
 
 #@ woocommerce-delivery-notes
 #: delivery-note-template/template.php:18
-#: delivery-note-template/template.php:129
+#: delivery-note-template/template.php:137
 msgid "Print Page"
 msgstr "Seite ausdrucken"
 
@@ -47,53 +47,53 @@ msgid "Price"
 msgstr "Preis"
 
 #@ woocommerce-delivery-notes
-#: delivery-note-template/template.php:86
+#: delivery-note-template/template.php:88
 msgid "Subtotal"
 msgstr "Zwischensumme"
 
 #@ woocommerce-delivery-notes
-#: delivery-note-template/template.php:91
+#: delivery-note-template/template.php:93
 msgid "Shipping"
 msgstr "Versand"
 
 #@ woocommerce-delivery-notes
-#: delivery-note-template/template.php:97
+#: delivery-note-template/template.php:99
 msgid "Tax"
 msgstr "Mwst."
 
 #@ woocommerce-delivery-notes
-#: delivery-note-template/template.php:103
+#: delivery-note-template/template.php:105
 msgid "Discount"
 msgstr "Rabatt"
 
 #@ woocommerce-delivery-notes
-#: delivery-note-template/template.php:108
+#: delivery-note-template/template.php:110
 msgid "Grand Total"
 msgstr "Gesamtsumme"
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:144
-#: wcdn-print.php:27
+#: wcdn-classes.php:149
+#: wcdn-print.php:31
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Sie haben keine ausreichende Rechte, um auf diese Seite zugreifen zu können."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:115
+#: wcdn-classes.php:119
 msgid "View &amp; Print Delivery Note"
 msgstr "Lieferschein Anzeigen &amp; Drucken"
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:132
+#: wcdn-classes.php:136
 msgid "Delivery Notes Settings"
 msgstr "Lieferschein-Einstellungen"
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:160
+#: wcdn-classes.php:165
 msgid "Settings saved."
 msgstr "Einstellungen gespeichert."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:248
+#: wcdn-classes.php:253
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
@@ -122,39 +122,33 @@ msgid "http://deckerweb.de/"
 msgstr "http://deckerweb.de/"
 
 #@ woocommerce-delivery-notes
-#. translators: plugin header field 'Version'
-#: woocommerce-delivery-notes.php:0
-msgid "1.0"
-msgstr "1.0"
-
-#@ woocommerce-delivery-notes
-#: woocommerce-delivery-notes.php:48
+#: woocommerce-delivery-notes.php:59
 msgid "Go to the settings page"
 msgstr "Zur Einstellungsseite des Plugins"
 
 #@ woocommerce-delivery-notes
-#: woocommerce-delivery-notes.php:48
+#: woocommerce-delivery-notes.php:59
 msgid "Settings"
 msgstr "Einstellungen"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:23
+#: wcdn-help.php:32
 msgid "FAQ"
 msgstr "FAQ - Häufige Fragen"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:24
+#: wcdn-help.php:33
 msgid "Support"
 msgstr "Hilfe und Unterstützung (Support)"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:25
-#: wcdn-help.php:147
+#: wcdn-help.php:34
+#: wcdn-help.php:161
 msgid "http://genesisthemes.de/en/donate/"
 msgstr "http://genesisthemes.de/spenden/"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:25
+#: wcdn-help.php:34
 msgid "Donate"
 msgstr "Spenden"
 
@@ -164,22 +158,22 @@ msgid "Product Name"
 msgstr "Produktbezeichnung"
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:194
+#: wcdn-classes.php:199
 msgid "Company/Shop Address:"
 msgstr "Firmen-/ Shop-Anschrift:"
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:207
+#: wcdn-classes.php:212
 msgid "Personal Notes:"
 msgstr "Persönliche Anmerkungen:"
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:220
+#: wcdn-classes.php:225
 msgid "Returns Policy, Conditions, etc.:"
 msgstr "Rückgabe- und sonstige Bedingungen:"
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:233
+#: wcdn-classes.php:238
 msgid "Footer Imprint:"
 msgstr "Fußzeile Impressum:"
 
@@ -209,56 +203,56 @@ msgid "Weight:"
 msgstr "Gewicht:"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:69
-#: wcdn-help.php:110
+#: wcdn-help.php:81
+#: wcdn-help.php:124
 msgid "What the Plugin Does"
 msgstr "Was das Plugin bewirkt"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:74
-#: wcdn-help.php:121
+#: wcdn-help.php:86
+#: wcdn-help.php:135
 msgid "FAQ - Frequently Asked Questions"
 msgstr "FAQ - Häufig gestellte Fragen"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:84
-#: wcdn-help.php:158
+#: wcdn-help.php:96
+#: wcdn-help.php:172
 msgid "Author - License"
 msgstr "Autor - Lizenz"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:79
-#: wcdn-help.php:146
+#: wcdn-help.php:91
+#: wcdn-help.php:160
 msgid "Support - Donations - Rating &amp; Tips"
 msgstr "Hilfe &amp; Unterstützung - Spenden - Bewertung &amp; Tipps"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:108
-#: wcdn-help.php:119
-#: wcdn-help.php:144
-#: wcdn-help.php:156
+#: wcdn-help.php:122
+#: wcdn-help.php:133
+#: wcdn-help.php:158
+#: wcdn-help.php:170
 msgid "Plugin: WooCommerce Delivery Notes"
 msgstr "Plugin: WooCommerce Lieferscheine"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:111
+#: wcdn-help.php:125
 msgid "This plugin enables you to add a simple Delivery Note page for printing for your orders in WooCommerce shop plugin. You can add your company postal address, further add personal notes, refund or other policies and a footer note/branding. This helps speed up your daily shop and order management. In some countries (e.g. in the European Union) it is also required to advice the customer with proper refund policies so this little plugin might help you a bit with that too."
 msgstr "Dieses Plugin ermöglicht es, einen einfachen Lieferschein zum Ausdrucken für das WooCommerce Shop-Plugin zu erhalten. Sie können Ihre Firmen-/ Shop-Informationen, ebenso persönliche Anmerkungen, weiterhin Bedingungen/ Widerrufbelehrung u.Ä. sowie eine Fußzeile (Impressum/ Branding) hinzufügen. Damit beschleunigen Sie die tägliche Shop-Verwaltung. Da in Ländern der Europäischen Union oftmals vorgeschrieben ist, Widerrufsbelehrungen u.Ä. der Bestellung beizulegen, können Sie dies hiermit besser erfüllen und außerdem Ihren Kunden bequem die Bestell-Infos in die Hand geben."
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:147
+#: wcdn-help.php:161
 #, php-format
 msgid "<strong>Donations:</strong> Please %1$sdonate to support the further maintenance and development%2$s of the plugin. <em>Thank you in advance!</em>"
 msgstr "<strong>Spenden:</strong> Bitte %1$sspenden für die weitere Pflege und Entwicklung dieses Plugins%2$s. <em>Bereits im Voraus vielen Dank für jede Unterstützung!</em>"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:148
+#: wcdn-help.php:162
 #, php-format
 msgid "<strong>Support:</strong> Done via %1$sWordPress.org plugin page support forum%2$s. - Maybe I will setup my own support forum in the future, though."
 msgstr "<strong>Unterstützung (Support):</strong> Erfolgt via %1$sWordPress.org Plugin-Supportforum%2$s. - Hinweis: Eventuell wird es in Zukunft ein eigenes Supportforum geben."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:181
+#: wcdn-classes.php:186
 msgid "Company/Shop Name:"
 msgstr "Firmen-/ Shop-Name:"
 
@@ -269,177 +263,188 @@ msgid "This plugin adds simple Delivery Notes for the WooCommerce Shop Plugin. Y
 msgstr "Dieses Plugin stellt einfache Lieferscheine für das WooCommerce Shop Plugin bereit. Es können dabei auch Firmen-/ Shop-Infos ebenso wie persönliche Anmerkungen oder Bedingungen/ Widerrufsbelehrungen zur Druckseite hinzugefügt werden."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:186
+#: wcdn-classes.php:191
 msgid "Your custom company or shop name for the Delivery Note."
 msgstr "Ihr benutzerdefinierter Firmen- oder Shop-Name für den Lieferschein."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:187
-#: wcdn-classes.php:200
-#: wcdn-classes.php:213
-#: wcdn-classes.php:226
-#: wcdn-classes.php:239
+#: wcdn-classes.php:192
+#: wcdn-classes.php:205
+#: wcdn-classes.php:218
+#: wcdn-classes.php:231
+#: wcdn-classes.php:244
 msgid "Note:"
 msgstr "Hinweis:"
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:188
+#: wcdn-classes.php:193
 msgid "Leave blank to use your default Website/ Blog title defined in WordPress settings."
 msgstr "Leer lassen, um den standardmäßigen Webseiten- bzw. Blogtitel zu verwenden, der in den WordPress-Einstellungen festgelegt wird."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:199
+#: wcdn-classes.php:204
 msgid "The postal address of the company/shop, which gets printed right of the company/shop name, above the order listings."
 msgstr "Die Postanschrift der Firma bzw. des Shops, welche rechts neben dem Firmen-/ Shopname ausgegeben wird, über den Bestelldaten."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:201
+#: wcdn-classes.php:206
 msgid "Here, you can also add some other contact information like the telephone and email."
 msgstr "Hier können Sie ebenfalls weitere Kontaktinformationen wie etwa Telefon oder E-Mail-Adresse angeben."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:212
+#: wcdn-classes.php:217
 msgid "Add some personal notes, or season greetings or whatever (e.g. Thank You for Your Order!, Merry Christmas!, etc.)."
 msgstr "Fügen Sie einige persönliche Anmerkungen wie Dank, jahreszeitliche Grüße hinzu (z.B.: Danke für Ihre Bestellung!, Frohe Weihnachten!, etc.)."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:214
+#: wcdn-classes.php:219
 msgid "This info gets printed below the order listings but above the regular shipping notes (added at WooCommerce single order pages). These personal notes here will get styled with bigger font size."
 msgstr "Diese Informationen werden direkt unter den Bestelldaten ausgegeben, aber über den regulären Bestellnotizen (die auf den WooCommerce-Bestellseiten hinzugefügt werden). Diese persönlichen Anmerkungen werden etwas hervorgehobener dargestellt, insbesondere mit etwas größerer Schriftgröße."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:225
+#: wcdn-classes.php:230
 msgid "Here you can add some more policies, conditions etc. For example add a returns policy in case the client would like to send back some goods."
 msgstr "Hier können Sie einige weitere Bedingungen angeben. Zum Beispiel Bedingungen für die Rückgabe, Widerrufsbelehrung etc."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:227
+#: wcdn-classes.php:232
 msgid "In some countries (e.g. in the European Union) this is required so please add any required info in accordance with the statutory regulations."
 msgstr "In einigen Ländern (z.B. innerhalb der EU) ist dies sogar vorgeschrieben - informieren Sie sich daher über die entsprechenden gesetzlichen Bestimmungen für Ihr Land."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:238
+#: wcdn-classes.php:243
 msgid "Add some further footer imprint, copyright notes etc. to get the printed sheets a bit more branded to your needs."
 msgstr "Fügen Sie Impressumangaben in der Fußzeile hinzu. Damit können die Ausdrucke noch stärker an Ihr CI bzw. rechtliche Anforderungen angepasst werden."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:240
+#: wcdn-classes.php:245
 msgid " This footer info gets printed in lower font size and a bit lighter text color."
 msgstr "Diese Informationen werden in kleinerer Schriftgröße und hellerer Textfarbe am Fuß ausgegeben."
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:170
+#: wcdn-classes.php:175
 msgid "WooCommerce - Delivery Notes Settings"
 msgstr "WooCommerce - Lieferschein-Einstellungen"
 
 #@ woocommerce-delivery-notes
-#: wcdn-classes.php:172
+#: wcdn-classes.php:177
 msgid "All setting fields below are optional - you can leave them empty to not use them at all or only apply what you need."
 msgstr "Alle Einstellungsfelder unten sind optional - Felder, die leer bleiben, erscheinen dann nicht auf dem Lieferschein."
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:90
+#: wcdn-help.php:102
 msgid "Feedback and more about the Author"
 msgstr "Feedback und mehr über den Autor"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:92
+#: wcdn-help.php:104
 msgid "Social:"
 msgstr "Soziale Netzwerke:"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:92
+#: wcdn-help.php:104
 msgid "Twitter"
 msgstr "Twitter"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:92
+#: wcdn-help.php:104
 msgid "Facebook"
 msgstr "Facebook"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:92
+#: wcdn-help.php:104
 msgid "Google+"
 msgstr "Google+"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:112
+#: wcdn-help.php:126
 #, php-format
 msgid "Just look under <a href=\"%1$s\">WooCommerce > Orders</a> and there go to a single order view. On the right side you will see the Delivery Note meta box. Click and you get the delivery Note printing page. Yes, it is that easy :-)."
 msgstr "Schauen Sie einfach unter <a href=\"%1$s\">WooCommerce > Bestellungen</a> und rufen Sie dort eine einzelne Bestellung auf. Auf rechten Seite erscheint die <em>Lieferschein</em>-Metabox. Klicken Sie dort und es öffnet sich der Lieferschein zum Ausdrucken. Das ist schon alles :-)."
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:124
-#: wcdn-help.php:132
+#: wcdn-help.php:138
+#: wcdn-help.php:146
 msgid "Question:"
 msgstr "Frage:"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:126
-#: wcdn-help.php:134
+#: wcdn-help.php:140
+#: wcdn-help.php:148
 msgid "Answer:"
 msgstr "Antwort:"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:149
+#: wcdn-help.php:163
 #, php-format
 msgid "<strong>Rating &amp; Tips:</strong> If you like the plugin please %1$srate at WordPress.org%2$s with 5 stars. <em>Thank you!</em> &mdash; %3$sMore plugins for WordPress by DECKERWEB%2$s"
 msgstr "<strong>Bewerten &amp; Tipps:</strong> Wenn das Plugin gefällt, einfach %1$sbei WordPress.org%2$s mit 5 Sternen bewerten. <em>Vielen Dank! :)</em> &mdash; %3$sMehr Plugins für Genesis von DECKERWEB%2$s"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:159
+#: wcdn-help.php:173
 #, php-format
 msgid "<strong>Author:</strong> David Decker of %1$sdeckerweb.de%2$s and %3$sGenesisThemes%2$s - Join me at %4$sTwitter%2$s, %5$sFacebook%2$s and %6$sGoogle Plus%2$s :-)"
 msgstr "<strong>Autor:</strong> David Decker von %1$sdeckerweb.de%2$s und %3$sGenesisThemes.de%2$s - Mich unterstützen bei %4$sTwitter%2$s, %5$sFacebook%2$s und %6$sGoogle Plus%2$s :-)"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:160
+#: wcdn-help.php:174
 #, php-format
 msgid "<strong>License:</strong> GPL v3 - %1$sMore info on the GPL license ...%2$s"
 msgstr "<strong>Lizenz:</strong> GPL v3 - %1$sMehr Informationen zur GPL-Lizenz (Engl.) ...%2$s"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:91
+#: wcdn-help.php:103
 msgid "Website"
 msgstr "Webseite"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:93
+#: wcdn-help.php:105
 msgid "at WordPress.org"
 msgstr "bei WordPress.org"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:91
+#: wcdn-help.php:103
 msgid "http://genesisthemes.de/en/"
 msgstr "http://deckerweb.de/"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:125
+#: wcdn-help.php:139
 msgid "Can I use a Custom Template for the printing page?"
 msgstr "Kann ein benutzerdefiniertes Template für die Lieferschein-Druckseite verwendet werden?"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:128
+#: wcdn-help.php:142
 msgid "Note: This works with both single themes and child themes (if you use some framework like Genesis). If your current active theme is a child theme put the custom folder there! (e.g. <code>/wp-content/themes/your-child-theme-name/woocommerce</code>)"
 msgstr "Hinweis: Dies funktioniert mit beiden, Single-Themes und Child Themes (wenn Frameworks wie etwa Genesis verwendet werden). Wenn Ihr derzeit aktives Theme ein Child Theme ist, fügen Sie den benutzerdefinierten Ordner dort ein! (z.B. <code>/wp-content/themes/ihr-child-theme-name/woocommerce</code>)"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:133
+#: wcdn-help.php:147
 msgid "What Template Functions can I use?"
 msgstr "Welche Template-Funktionen können verwendet werden?"
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:127
+#: wcdn-help.php:141
 msgid "If you want to use your own template then all you need to do is copy the <code>/wp-content/plugins/woocommerce-delivery-notes/delivery-note-template</code> folder and paste it inside your <code>/wp-content/themes/your-theme-name/woocommerce</code> folder (if not there just create it). The folder from the plugin comes with the default template and the basic CSS stylesheet file. You can modifiy this to fit your own needs."
 msgstr "Wenn Sie Ihr eigenes Template verwenden wollen, müssen Sie den entsprechenden Ordner <code>/wp-content/plugins/woocommerce-delivery-notes/delivery-note-template</code> in Ihren Theme-Ordner kopieren <code>/wp-content/themes/ihr-theme-name/woocommerce</code>. Falls es diesen noch nicht gibt, einfach erstellen. Der Plugin-Ordner enthält das Standard-Template und das CSS-Stylesheet. Beide können an eigene Bedürfnisse angepasst werden."
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:136
+#: wcdn-help.php:150
 msgid "Important note: This is only intended for developers who know what they do! Please be careful with adding any code/functions! The default template and functions should fit most use cases."
 msgstr "Wichtiger Hinweis: Dies wird nur empfohlen für Entwickler, die wissen, was sie tun! Bitte seien Sie vorsichtig beim Hinzufügen eigener Codes bzw. Funktionen! Das Standard-Template sollte für die meisten Anwendungsfälle bereits ausreichen."
 
 #@ woocommerce-delivery-notes
-#: wcdn-help.php:135
+#: wcdn-help.php:149
 msgid "Arbitrary php code and all WordPress functions are available in the template. Besides that there are many Delivery Notes specific template functions. Open the <code>woocommerce-delivery-notes/wcdn-print.php</code> file to see all available functions."
 msgstr "Im Template sind alle WordPress-Funktionen und beliebiger PHP-Code verfügbar. Außerdem sind viele Lieferschein-spezifische Template-Funktionen verfügbar. Diese sind in der Plugin-Datei <code>woocommerce-delivery-notes/wcdn-print.php</code> zu finden bzw. dokumentiert."
+
+#@ woocommerce-delivery-notes
+#: delivery-note-template/template.php:121
+msgid "Customer Notes:"
+msgstr "Kunden-Bestellnotizen:"
+
+#@ woocommerce-delivery-notes
+#. translators: plugin header field 'Version'
+#: woocommerce-delivery-notes.php:0
+msgid "1.1"
+msgstr "1.1"
 

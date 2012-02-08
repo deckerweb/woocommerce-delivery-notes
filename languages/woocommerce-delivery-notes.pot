@@ -1,4 +1,4 @@
-# This German Language File: Copyright (C) 2011 by David Decker of deckerweb.de & genesisthemes.de
+# This German Language File: Copyright (C) 2011-2012 by David Decker of deckerweb.de & genesisthemes.de
 # This file is distributed under the same license as the WooCommerce Delivery Notes Plugin package.
 #
 msgid ""
@@ -114,12 +114,6 @@ msgstr ""
 #. translators: plugin header field 'AuthorURI'
 #: woocommerce-delivery-notes.php:0
 msgid "http://deckerweb.de/"
-msgstr ""
-
-#@ woocommerce-delivery-notes
-#. translators: plugin header field 'Version'
-#: woocommerce-delivery-notes.php:0
-msgid "1.0"
 msgstr ""
 
 #@ woocommerce-delivery-notes
@@ -436,5 +430,16 @@ msgstr ""
 #@ woocommerce-delivery-notes
 #: wcdn-help.php:135
 msgid "Arbitrary php code and all WordPress functions are available in the template. Besides that there are many Delivery Notes specific template functions. Open the <code>woocommerce-delivery-notes/wcdn-print.php</code> file to see all available functions."
+msgstr ""
+
+#: delivery-note-template/template.php:121
+#@ woocommerce-delivery-notes
+msgid "Customer Notes:"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: woocommerce-delivery-notes.php:0
+#@ woocommerce-delivery-notes
+msgid "1.1"
 msgstr ""
 
