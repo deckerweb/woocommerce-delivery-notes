@@ -30,42 +30,42 @@ msgstr ""
 #: delivery-note-template/template.php:129
 #@ woocommerce-delivery-notes
 msgid "Print Page"
-msgstr ""
+msgstr "Print Pagina"
 
 #: delivery-note-template/template.php:67
 #@ woocommerce-delivery-notes
 msgid "Quantity"
-msgstr ""
+msgstr "Hoeveelheid"
 
 #: delivery-note-template/template.php:68
 #@ woocommerce-delivery-notes
 msgid "Price"
-msgstr ""
+msgstr "Prijs"
 
 #: delivery-note-template/template.php:86
 #@ woocommerce-delivery-notes
 msgid "Subtotal"
-msgstr ""
+msgstr "Subtotaal"
 
 #: delivery-note-template/template.php:91
 #@ woocommerce-delivery-notes
 msgid "Shipping"
-msgstr ""
+msgstr "Verzendkosten"
 
 #: delivery-note-template/template.php:97
 #@ woocommerce-delivery-notes
 msgid "Tax"
-msgstr ""
+msgstr "BTW"
 
 #: delivery-note-template/template.php:103
 #@ woocommerce-delivery-notes
 msgid "Discount"
-msgstr ""
+msgstr "Korting"
 
 #: delivery-note-template/template.php:108
 #@ woocommerce-delivery-notes
 msgid "Grand Total"
-msgstr ""
+msgstr "Totaal"
 
 #: wcdn-classes.php:144
 #: wcdn-print.php:27
@@ -146,12 +146,12 @@ msgstr ""
 #: wcdn-help.php:25
 #@ woocommerce-delivery-notes
 msgid "Donate"
-msgstr ""
+msgstr "Doneer"
 
 #: delivery-note-template/template.php:66
 #@ woocommerce-delivery-notes
 msgid "Product Name"
-msgstr ""
+msgstr "Product Naam"
 
 #: wcdn-classes.php:194
 #@ woocommerce-delivery-notes
@@ -208,13 +208,13 @@ msgstr ""
 #: wcdn-help.php:121
 #@ woocommerce-delivery-notes
 msgid "FAQ - Frequently Asked Questions"
-msgstr ""
+msgstr "FAQ - Veel gestelde vragen"
 
 #: wcdn-help.php:84
 #: wcdn-help.php:158
 #@ woocommerce-delivery-notes
 msgid "Author - License"
-msgstr ""
+msgstr "Auteur - Licentie"
 
 #: wcdn-help.php:79
 #: wcdn-help.php:146
@@ -270,7 +270,7 @@ msgstr ""
 #: wcdn-classes.php:239
 #@ woocommerce-delivery-notes
 msgid "Note:"
-msgstr ""
+msgstr "Opmerking:"
 
 #: wcdn-classes.php:188
 #@ woocommerce-delivery-notes
@@ -345,12 +345,12 @@ msgstr ""
 #: wcdn-help.php:92
 #@ woocommerce-delivery-notes
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: wcdn-help.php:92
 #@ woocommerce-delivery-notes
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: wcdn-help.php:112
 #, php-format
@@ -436,7 +436,7 @@ msgstr ""
 #: delivery-note-template/template.php:121
 #@ woocommerce-delivery-notes
 msgid "Customer Notes:"
-msgstr ""
+msgstr "Opmerking van de klant:"
 
 #. translators: plugin header field 'Version'
 #: woocommerce-delivery-notes.php:0
