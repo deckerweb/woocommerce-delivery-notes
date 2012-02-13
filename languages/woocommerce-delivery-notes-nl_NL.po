@@ -1,4 +1,3 @@
-#@ woocommerce-delivery-notes
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Delivery Notes\n"
@@ -98,25 +97,25 @@ msgstr ""
 #: woocommerce-delivery-notes.php:0
 #@ woocommerce-delivery-notes
 msgid "WooCommerce Delivery Notes"
-msgstr ""
+msgstr "WooCommerce Delivery Notes"
 
 #. translators: plugin header field 'PluginURI'
 #: woocommerce-delivery-notes.php:0
 #@ woocommerce-delivery-notes
 msgid "http://genesisthemes.de/en/wp-plugins/woocommerce-delivery-notes/"
-msgstr ""
+msgstr "http://genesisthemes.de/en/wp-plugins/woocommerce-delivery-notes/"
 
 #. translators: plugin header field 'Author'
 #: woocommerce-delivery-notes.php:0
 #@ woocommerce-delivery-notes
 msgid "David Decker - DECKERWEB"
-msgstr ""
+msgstr "David Decker - DECKERWEB"
 
 #. translators: plugin header field 'AuthorURI'
 #: woocommerce-delivery-notes.php:0
 #@ woocommerce-delivery-notes
 msgid "http://deckerweb.de/"
-msgstr ""
+msgstr "http://deckerweb.de/"
 
 #: woocommerce-delivery-notes.php:48
 #@ woocommerce-delivery-notes
@@ -131,12 +130,12 @@ msgstr ""
 #: wcdn-help.php:23
 #@ woocommerce-delivery-notes
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #: wcdn-help.php:24
 #@ woocommerce-delivery-notes
 msgid "Support"
-msgstr ""
+msgstr "Ondersteuning"
 
 #: wcdn-help.php:25
 #: wcdn-help.php:147
@@ -257,7 +256,7 @@ msgstr ""
 #: woocommerce-delivery-notes.php:0
 #@ woocommerce-delivery-notes
 msgid "This plugin adds simple Delivery Notes for the WooCommerce Shop Plugin. You can add company/shop info as well as personal notes and policies to the print page."
-msgstr ""
+msgstr "This plugin adds simple Delivery Notes for the WooCommerce Shop Plugin. You can add company/shop info as well as personal notes and policies to the print page."
 
 #: wcdn-classes.php:186
 #@ woocommerce-delivery-notes
@@ -392,7 +391,7 @@ msgstr ""
 #: wcdn-help.php:91
 #@ woocommerce-delivery-notes
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: wcdn-help.php:93
 #@ woocommerce-delivery-notes
@@ -402,7 +401,7 @@ msgstr ""
 #: wcdn-help.php:91
 #@ woocommerce-delivery-notes
 msgid "http://genesisthemes.de/en/"
-msgstr ""
+msgstr "http://genesisthemes.de/en/"
 
 #: wcdn-help.php:125
 #@ woocommerce-delivery-notes
@@ -443,5 +442,5 @@ msgstr ""
 #: woocommerce-delivery-notes.php:0
 #@ woocommerce-delivery-notes
 msgid "1.1"
-msgstr ""
+msgstr "1.1"
 
