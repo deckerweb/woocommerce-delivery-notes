@@ -24,7 +24,7 @@ msgstr ""
 #: wcdn-classes.php:101
 #@ woocommerce-delivery-notes
 msgid "Delivery Note"
-msgstr ""
+msgstr "Pakbon"
 
 #: delivery-note-template/template.php:18
 #: delivery-note-template/template.php:129
@@ -71,27 +71,27 @@ msgstr "Totaal"
 #: wcdn-print.php:27
 #@ woocommerce-delivery-notes
 msgid "You do not have sufficient permissions to access this page."
-msgstr ""
+msgstr "U heeft niet voldoende rechten om deze pagina te bekijken."
 
 #: wcdn-classes.php:115
 #@ woocommerce-delivery-notes
 msgid "View &amp; Print Delivery Note"
-msgstr ""
+msgstr "Bekijk en Print Pakbon"
 
 #: wcdn-classes.php:132
 #@ woocommerce-delivery-notes
 msgid "Delivery Notes Settings"
-msgstr ""
+msgstr "Pakbon Instellingen"
 
 #: wcdn-classes.php:160
 #@ woocommerce-delivery-notes
 msgid "Settings saved."
-msgstr ""
+msgstr "Instellingen opgeslagen."
 
 #: wcdn-classes.php:248
 #@ woocommerce-delivery-notes
 msgid "Save Changes"
-msgstr ""
+msgstr "Wijzigingen Opslaan"
 
 #. translators: plugin header field 'Name'
 #: woocommerce-delivery-notes.php:0
@@ -120,12 +120,12 @@ msgstr "http://deckerweb.de/"
 #: woocommerce-delivery-notes.php:48
 #@ woocommerce-delivery-notes
 msgid "Go to the settings page"
-msgstr ""
+msgstr "Ga naar de instellingen"
 
 #: woocommerce-delivery-notes.php:48
 #@ woocommerce-delivery-notes
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #: wcdn-help.php:23
 #@ woocommerce-delivery-notes
@@ -141,7 +141,7 @@ msgstr "Ondersteuning"
 #: wcdn-help.php:147
 #@ woocommerce-delivery-notes
 msgid "http://genesisthemes.de/en/donate/"
-msgstr ""
+msgstr "http://genesisthemes.de/en/donate/"
 
 #: wcdn-help.php:25
 #@ woocommerce-delivery-notes
@@ -156,53 +156,53 @@ msgstr "Product Naam"
 #: wcdn-classes.php:194
 #@ woocommerce-delivery-notes
 msgid "Company/Shop Address:"
-msgstr ""
+msgstr "Winkel Adres:"
 
 #: wcdn-classes.php:207
 #@ woocommerce-delivery-notes
 msgid "Personal Notes:"
-msgstr ""
+msgstr "Persoonlijke Opmerkingen:"
 
 #: wcdn-classes.php:220
 #@ woocommerce-delivery-notes
 msgid "Returns Policy, Conditions, etc.:"
-msgstr ""
+msgstr "Algemene Voorwaarden:"
 
 #: wcdn-classes.php:233
 #@ woocommerce-delivery-notes
 msgid "Footer Imprint:"
-msgstr ""
+msgstr "Voettekst:"
 
 #: delivery-note-template/template.php:36
 #@ woocommerce-delivery-notes
 msgid "Recipient:"
-msgstr ""
+msgstr "Ontvanger:"
 
 #: delivery-note-template/template.php:51
 #@ woocommerce-delivery-notes
 msgid "Order No."
-msgstr ""
+msgstr "Bestelling nummer"
 
 #: delivery-note-template/template.php:55
 #@ woocommerce-delivery-notes
 msgid "Order Date"
-msgstr ""
+msgstr "Bestel Datum"
 
 #: delivery-note-template/template.php:74
 #@ woocommerce-delivery-notes
 msgid "SKU:"
-msgstr ""
+msgstr "Art.Nr."
 
 #: delivery-note-template/template.php:74
 #@ woocommerce-delivery-notes
 msgid "Weight:"
-msgstr ""
+msgstr "Gewicht:"
 
 #: wcdn-help.php:69
 #: wcdn-help.php:110
 #@ woocommerce-delivery-notes
 msgid "What the Plugin Does"
-msgstr ""
+msgstr "Wat deze plugin doet"
 
 #: wcdn-help.php:74
 #: wcdn-help.php:121
@@ -220,7 +220,7 @@ msgstr "Auteur - Licentie"
 #: wcdn-help.php:146
 #@ woocommerce-delivery-notes
 msgid "Support - Donations - Rating &amp; Tips"
-msgstr ""
+msgstr "Support - Donations - Rating &amp; Tips"
 
 #: wcdn-help.php:108
 #: wcdn-help.php:119
@@ -228,7 +228,7 @@ msgstr ""
 #: wcdn-help.php:156
 #@ woocommerce-delivery-notes
 msgid "Plugin: WooCommerce Delivery Notes"
-msgstr ""
+msgstr "Plugin: WooCommerce Delivery Notes"
 
 #: wcdn-help.php:111
 #@ woocommerce-delivery-notes
@@ -250,7 +250,7 @@ msgstr ""
 #: wcdn-classes.php:181
 #@ woocommerce-delivery-notes
 msgid "Company/Shop Name:"
-msgstr ""
+msgstr "Winkel Adres:"
 
 #. translators: plugin header field 'Description'
 #: woocommerce-delivery-notes.php:0
@@ -320,7 +320,7 @@ msgstr "Diese Informationen werden in kleinerer Schriftgröße und hellerer Text
 #: wcdn-classes.php:170
 #@ woocommerce-delivery-notes
 msgid "WooCommerce - Delivery Notes Settings"
-msgstr ""
+msgstr "WooCommerce - Pakbon Instellingen"
 
 #: wcdn-classes.php:172
 #@ woocommerce-delivery-notes
@@ -335,12 +335,12 @@ msgstr ""
 #: wcdn-help.php:92
 #@ woocommerce-delivery-notes
 msgid "Social:"
-msgstr ""
+msgstr "Sociale Media:"
 
 #: wcdn-help.php:92
 #@ woocommerce-delivery-notes
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: wcdn-help.php:92
 #@ woocommerce-delivery-notes
@@ -362,13 +362,13 @@ msgstr ""
 #: wcdn-help.php:132
 #@ woocommerce-delivery-notes
 msgid "Question:"
-msgstr ""
+msgstr "Vraag:"
 
 #: wcdn-help.php:126
 #: wcdn-help.php:134
 #@ woocommerce-delivery-notes
 msgid "Answer:"
-msgstr ""
+msgstr "Antwoord:"
 
 #: wcdn-help.php:149
 #, php-format
