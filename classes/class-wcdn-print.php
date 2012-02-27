@@ -48,7 +48,15 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 				$this->template_dir_url = $this->template_base . $this->template_dir_name;
 				$this->template_dir_path = $this->template_base . $this->template_dir_name;
 			}
-
+			
+			// Legacy support for old custom template folder structure
+			$legacy_is_custom_html = @file_exists( trailingslashit( get_stylesheet_directory() ) . $this->template_base_in_theme . 'delivery-note-template/template.php' );
+			if( $legacy_is_custom_html ) {
+				$this->template_dir_url = trailingslashit( get_stylesheet_directory_uri() ) . $this->template_base_in_theme . 'delivery-note-template/';
+				$this->template_dir_path = trailingslashit( get_stylesheet_directory() ) . $this->template_base_in_theme . 'delivery-note-template/';
+				$this->template_name = 'template.php';
+			}
+			
 			// Read the file
 			ob_start();
 			require_once $this->template_dir_path . $this->template_name;
