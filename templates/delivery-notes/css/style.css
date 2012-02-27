@@ -72,6 +72,10 @@ body {
 	line-height: 125%;
 }
 
+p {
+	margin-bottom: 1.25em;
+}
+
 /* Basic Table Styling */
 td,
 th {
@@ -83,6 +87,7 @@ th {
 th {
 	color: #000;
 	font-weight: 700;
+	text-align: left;
 }
 
 /* Main Sections of the Page */
@@ -131,7 +136,7 @@ th {
 }
 
 /* Special Margin & Overflow Stylings */
-#wcdn-head,
+#letter-header,
 #order-items,
 #order-summary {
 	margin-bottom: 60px;
@@ -141,15 +146,15 @@ th {
 	margin-bottom: 100px;
 }
 
-#wcdn-head,
+#letter-header,
 #order-info,
 #order-summary,
 #order-notes {
-	overflow: hidden;
+	overflow: auto;
 }
 
-/* Delivery Notes Head - #wcdn-head */
-#wcdn-head .wcdn-heading {
+/* Delivery Notes Head */
+#letter-header .heading {
 	border-bottom: 1px solid #ccc;
 	border-top: 1px solid #ccc;
 	font-size: 1.1em;
@@ -161,17 +166,17 @@ th {
 	width: 100%;
 }
 
-#wcdn-head div {
+#letter-header div {
 	width: 400px;
 }
 
-#wcdn-head .company-name {
+#letter-header .company-name {
 	float: left;
 	font-size: 2.5em;
 	line-height: 125%;
 }
 
-#wcdn-head .company-info {
+#letter-header .company-info {
 	float: right;
 	text-align: right;
 }
@@ -235,8 +240,8 @@ th {
 
 #order-summary #total-label,
 #order-summary #total-number {
-	border-top: 2px solid #999;
-	border-bottom: 3px solid #999;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
 	padding-top: 7px;
 }
 
@@ -269,13 +274,13 @@ th {
 	line-height: 125%;
 }
 
-/* Footer Imprint - #wcdn-footer */
-#wcdn-footer {
+/* Footer Imprint */
+#letter-footer {
 	border-top: 1px solid #ccc;
 	padding: 10px 20px;
 }
 
-#wcdn-footer .wcdn-footer-imprint {
+#letter-footer .imprint {
 	color: #666;
 	float: right;
 	font-size: .80em;

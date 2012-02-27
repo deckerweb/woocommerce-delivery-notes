@@ -27,7 +27,7 @@ if ( !defined( 'ABSPATH' ) ) {
  *
  * @since 1.0
  */
-if ( !current_user_can( 'manage_options' ) || !$_GET['order'] ) {
+if (!current_user_can('edit_others_posts') || empty($_GET['order'])) {
 	wp_die( __( 'You do not have sufficient permissions to access this page.', 'woocommerce-delivery-notes' ) );
 }
 
@@ -37,7 +37,8 @@ if ( !current_user_can( 'manage_options' ) || !$_GET['order'] ) {
  *
  * @since 1.0
  */
-require_once 'wcdn-classes.php';
+require_once 'classes/class-wcdn-base.php';
+require_once 'classes/class-wcdn-print.php';
 
 
 /**

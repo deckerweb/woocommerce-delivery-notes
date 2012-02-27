@@ -21,8 +21,8 @@
 
 		<div id="content">			
 			<div id="page">
-				<div id="wcdn-head">
-					<div class="wcdn-heading"><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?></div>
+				<div id="letter-header">
+					<div class="heading"><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?></div>
 					<div class="company-name"><?php
 						if ( wcdn_custom_company_name() ) {
 							echo wcdn_custom_company_name();
@@ -126,8 +126,8 @@
 					<div class="notes-policies"><?php echo wcdn_policies_conditions(); ?></div>
 				</div><!-- #order-notes -->
 
-				<div id="wcdn-footer">
-					<div class="wcdn-footer-imprint"><?php echo wcdn_footer_imprint(); ?></div>
+				<div id="letter-footer">
+					<div class="imprint"><?php echo wcdn_footer_imprint(); ?></div>
 				</div><!-- #wcdn-footer -->
 			</div><!-- #page -->
 		</div><!-- #content -->

@@ -4,7 +4,7 @@ Donate link: http://genesisthemes.de/en/donate/
 Tags: delivery notes, delivery, shipping, print, order, invoice, woocommerce, woo commerce, woothemes, administration, shop, shop manager, deckerweb
 Requires at least: 3.3 and WooCommerce 1.4+
 Tested up to: 3.3.1
-Stable tag: 1.1
+Stable tag: 1.1.1
 
 This plugin adds Delivery Notes for the WooCommerce Shop Plugin. You can add company info as well as personal notes and policies to the print page.
 
@@ -14,7 +14,7 @@ With this plugin you can print out delivery notes for the orders via the WooComm
 
 The plugin adds a new side panel on the order page to allow shop administrators to print out delivery notes. This is useful for a lot of shops that sell goods which need delivery notes for shipping or with added refund policies etc. In some countries (e.g. in the European Union) such refund policies are required so this plugin could help to combine this with the order info for the customer.
 
-= Special Features =
+= Features =
 * The plugin comes with an attached template for the delivery note (printing) page - you could also copy this to your theme and customize it to your needs! The plugin will recognize the new place. (See under [FAQ here](http://wordpress.org/extend/plugins/woocommerce-delivery-notes/faq/))
 * All setting fields on the settings pages are optional - you can leave them empty to not use them at all or only apply what you need.
 * If the company/shop name field is left empty then the regular website/blog title is used (defined via regular WordPress options)
@@ -28,7 +28,7 @@ The plugin adds a new side panel on the order page to allow shop administrators 
 * .pot file (`woocommerce-delivery-notes.pot`) for translators is also always included :)
 * *Your translation? - [Just send it in](http://genesisthemes.de/en/contact/)*
 
-Credit where credit is due: This plugin here is inspired and based on the work of Steve Clark, Trigvvy Gunderson and PiffPaffPuff and the awesome "Jigoshop Delivery Notes" plugin! See below how you can contribute to the further development of both:
+Credit where credit is due: This plugin here is inspired and based on the work of Steve Clark, Trigvvy Gunderson and the awesome "Jigoshop Delivery Notes" plugin! See below how you can contribute to the further development of both:
 
 = Contribute =
 Since this is a fork I've made the plugin available in a developer repository at GitHub just like the original.
@@ -62,12 +62,12 @@ Since this is a fork I've made the plugin available in a developer repository at
 == Frequently Asked Questions ==
 
 = Can I use a Custom Template for the printing page? =
-If you want to use your own template then all you need to do is copy the `/wp-content/plugins/woocommerce-delivery-notes/delivery-note-template` folder and paste it inside your `/wp-content/themes/your-theme-name/woocommerce` folder (if not there just create it). The folder from the plugin comes with the default template and the basic CSS stylesheet file. You can modifiy this to fit your own needs.
+If you want to use your own template then all you need to do is copy the `/wp-content/plugins/woocommerce-delivery-notes/template/delivery-notes` folder and paste it inside your `/wp-content/themes/your-theme-name/woocommerce` folder (if not there just create it). The folder from the plugin comes with the default template and the basic CSS stylesheet file. You can modifiy this to fit your own needs.
 
 *Note:* This works with both single themes and child themes (if you use some framework like Genesis). If your current active theme is a child theme put the custom folder there! (e.g. `/wp-content/themes/your-child-theme-name/woocommerce`)
 
 = What Template Functions can I use? =
-Various functions are available in the template, especially many Delivery Notes specific template functions. Open the `woocommerce-delivery-notes/wcdn-print.php` file to see all available functions.
+Various functions are available in the template, especially many Delivery Notes specific template functions. Open the `woocommerce-delivery-notes/woocommerce-delivery-notes-print.php` file to see all available functions.
 
 *Please note:* This is only intended for developers who know what they do! Please be careful with adding any code/functions! The default template and functions should fit most use cases.
 
@@ -87,6 +87,11 @@ The basic intention is to have the plugin at the same time as leightweight and u
 3. Delivery Note printing page with default template - and the five custom sections marked (yellow)
 
 == Changelog ==
+
+= 1.1.1 =
+* Restructured classes
+* Settings are part of the WooCommerce settings
+* Template folder renaming (custom templates must be renamed to work)
 
 = 1.1 =
 * Maintenance release
