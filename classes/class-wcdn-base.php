@@ -28,16 +28,16 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Base' ) ) {
 			$this->plugin_path = plugin_dir_path( $this->plugin_basefile );
 
 			if ( $this->is_woocommerce_activated() ) {
-				add_action( 'init', array( $this, 'load_all_hooks' ) );
+				add_action( 'init', array( $this, 'load_textdomain' ) );
 			}	
 		}
 		
 		/**
-		 * Load the hooks
+		 * Load the text domain
 		 *
 		 * @since 1.0
 		 */
-		public function load_all_hooks() {				
+		public function load_textdomain() {				
 			load_plugin_textdomain( 'woocommerce-delivery-notes', false, $this->plugin_basename . '/languages' );
 		}
 		

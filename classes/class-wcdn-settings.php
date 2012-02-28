@@ -24,7 +24,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 			$this->hidden_submit = $this->prefix . 'submit';
 
 			if ( $this->is_woocommerce_activated() ) {
-				add_action( 'admin_init', array( $this, 'load_all_hooks' ) );
+				add_action( 'admin_init', array( $this, 'load_hooks' ) );
 			}
 		}
 
@@ -33,7 +33,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		 *
 		 * @since 1.0
 		 */
-		public function load_all_hooks() {	
+		public function load_hooks() {	
 			add_filter( 'plugin_action_links_' . $this->plugin_basefile, array( $this, 'add_settings_link') );
 			add_filter( 'woocommerce_settings_tabs_array', array( $this, 'add_settings_tab') );
 			add_action( 'woocommerce_settings_tabs_' . $this->tab_name, array( $this, 'create_settings_page') );
@@ -112,7 +112,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		 * @since 1.0
 		 */
 		public function add_settings_tab($tabs) {
-			$tabs[$this->tab_name] = __( 'Delivery Notes', 'woocommerce-delivery-notes' );
+			$tabs[$this->tab_name] = __( 'Delivery Note', 'woocommerce-delivery-notes' );
 			
 			return $tabs;
 		}

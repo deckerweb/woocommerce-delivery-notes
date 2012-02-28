@@ -18,7 +18,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 			parent::__construct();
 
 			if ( $this->is_woocommerce_activated() ) {
-				add_action( 'admin_init', array( $this, 'load_all_hooks' ) );
+				add_action( 'admin_init', array( $this, 'load_hooks' ) );
 			}
 		}
 
@@ -27,7 +27,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 		 *
 		 * @since 1.0
 		 */
-		public function load_all_hooks() {	
+		public function load_hooks() {	
 			add_filter( 'plugin_row_meta', array( $this, 'add_support_links' ), 10, 2 );			
 			add_action( 'add_meta_boxes_shop_order', array( $this, 'add_box' ) );
 		}
