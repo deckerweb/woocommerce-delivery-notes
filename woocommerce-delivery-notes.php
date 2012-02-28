@@ -12,9 +12,9 @@
  * @link https://github.com/piffpaffpuff
  *
  * Plugin Name: WooCommerce Delivery Notes
- * Plugin URI: http://wordpress.org/extend/plugins/woocommerce-delivery-notes/
+ * Plugin URI: http://genesisthemes.de/en/wp-plugins/woocommerce-delivery-notes/
  * Description: This plugin adds simple Delivery Notes for the WooCommerce Shop Plugin. You can add company/shop info as well as personal notes and policies to the print page.
- * Version: 1.1.1
+ * Version: 1.1
  * Author: David Decker, Triggvy Gunderson, Steve Clark
  * Author URI: http://deckerweb.de/
  * License: GPLv3
