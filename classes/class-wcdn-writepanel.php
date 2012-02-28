@@ -7,7 +7,7 @@
  */
 if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 
-	class WooCommerce_Delivery_Notes_Writepanel extends WooCommerce_Delivery_Notes {
+	class WooCommerce_Delivery_Notes_Writepanel extends WooCommerce_Delivery_Notes_Base {
 
 		/**
 		 * Constructor

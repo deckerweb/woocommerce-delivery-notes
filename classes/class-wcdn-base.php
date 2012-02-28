@@ -5,9 +5,9 @@
  *
  * @since 1.0
  */
-if ( !class_exists( 'WooCommerce_Delivery_Notes' ) ) {
+if ( !class_exists( 'WooCommerce_Delivery_Notes_Base' ) ) {
 
-	class WooCommerce_Delivery_Notes {
+	class WooCommerce_Delivery_Notes_Base {
 
 		public $prefix;
 		public $plugin_url;

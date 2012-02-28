@@ -7,7 +7,7 @@
  */
 if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 
-	class WooCommerce_Delivery_Notes_Print extends WooCommerce_Delivery_Notes {
+	class WooCommerce_Delivery_Notes_Print extends WooCommerce_Delivery_Notes_Base {
 
 		public $template_name;
 		public $template_dir_name;

@@ -6,7 +6,8 @@
  * @since 1.0
  */
 if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
-	class WooCommerce_Delivery_Notes_Settings extends WooCommerce_Delivery_Notes {
+
+	class WooCommerce_Delivery_Notes_Settings extends WooCommerce_Delivery_Notes_Base {
 	
 		private $tab_name;
 		private $hidden_submit;
