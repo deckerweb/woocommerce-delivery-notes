@@ -38,7 +38,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 			add_filter( 'woocommerce_settings_tabs_array', array( $this, 'add_settings_tab') );
 			add_action( 'woocommerce_settings_tabs_' . $this->tab_name, array( $this, 'create_settings_page') );
 			add_action( 'woocommerce_update_options_' . $this->tab_name, array( $this, 'save_settings_page') );
-			add_action( 'admin_menu', array( $this, 'load_help' ), 20 );
+			add_action( 'admin_init', array( $this, 'load_help' ), 20 );
 		}
 		
 		/**
@@ -60,7 +60,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		 */
 		public function load_help() {
 			// Get the hookname and load the help tabs
-			if ( isset($_GET['page']) ) {
+			if ( isset($_GET['page']) && isset($_GET['tab']) && $_GET['tab'] == $this->tab_name ) {
 				$menu_slug = plugin_basename( $_GET['page'] );
 				$hookname = get_plugin_page_hookname( $menu_slug, '' );
 		
