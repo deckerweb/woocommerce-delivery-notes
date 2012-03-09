@@ -30,8 +30,22 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 		public function load_hooks() {	
 			add_filter( 'plugin_row_meta', array( $this, 'add_support_links' ), 10, 2 );			
 			add_action( 'add_meta_boxes_shop_order', array( $this, 'add_box' ) );
+			add_action( 'admin_print_styles-post.php', array( $this, 'print_styles' ) );
 		}
 
+		/**
+		 * Load the styles
+		 *
+		 * @since 1.0
+		 */
+		public function print_styles() {
+			global $post_type;
+			
+			if($post_type == 'shop_order') {
+				wp_enqueue_style('delivery-notes-styles', $this->plugin_url . 'css/style.css');
+			}
+		}
+		
 		/**
 		 * Add various support links to plugin page
 		 *
@@ -57,7 +71,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 		 * @since 1.0
 		 */
 		public function add_box() {
-			add_meta_box( 'woocommerce-delivery-notes-box', __( 'Delivery Note', 'woocommerce-delivery-notes' ), array( $this, 'create_box_content' ), 'shop_order', 'side', 'default' );
+			add_meta_box( 'woocommerce-delivery-notes-box', __( 'Order Print', 'woocommerce-delivery-notes' ), array( $this, 'create_box_content' ), 'shop_order', 'side', 'default' );
 		}
 
 		/**
@@ -69,11 +83,10 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 			global $post_id;
 
 			?>
-			<table class="form-table">
-				<tr>
-					<td><a href="<?php echo $this->plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>" id="print_delivery_note" class="button button-primary" target="_blank"><?php _e( 'View &amp; Print Delivery Note', 'woocommerce-delivery-notes' ); ?></a></td>
-				</tr>
-			</table>
+			<ul class="delivery-notes-actions">
+				<li><a href="<?php echo $this->plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>&slug=print&name=invoice" id="print_invoice" class="button button" target="_blank"><?php _e( 'Print Invoice', 'woocommerce-delivery-notes' ); ?></a></li>
+				<li><a href="<?php echo $this->plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>&slug=print&name=delivery-note" id="print_delivery_note" class="button button" target="_blank"><?php _e( 'Print Delivery Note', 'woocommerce-delivery-notes' ); ?></a></li>
+			</ul>
 			<?php
 		}
 		

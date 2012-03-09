@@ -24,8 +24,8 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Base' ) ) {
 			$this->prefix = 'wcdn_';
 			$this->plugin_basename = plugin_basename(dirname(dirname(__FILE__)));
 			$this->plugin_basefile = $this->plugin_basename . '/' . $this->plugin_basename . '.php';
-			$this->plugin_url = plugin_dir_url( $this->plugin_basefile );
-			$this->plugin_path = plugin_dir_path( $this->plugin_basefile );
+			$this->plugin_url = plugin_dir_url($this->plugin_basefile);
+			$this->plugin_path = trailingslashit(dirname(dirname(__FILE__)));
 
 			if ( $this->is_woocommerce_activated() ) {
 				add_action( 'init', array( $this, 'load_textdomain' ) );

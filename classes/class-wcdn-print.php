@@ -9,12 +9,11 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 
 	class WooCommerce_Delivery_Notes_Print extends WooCommerce_Delivery_Notes_Base {
 
-		public $template_name;
-		public $template_dir_name;
-		public $template_dir_url;
-		public $template_dir_path;
+		public $template_url;
+		public $template_dir;
 		public $template_base;
-		public $template_base_in_theme;
+		public $theme_base;
+		public $theme_path;
 
 		private $order;
 
@@ -26,10 +25,12 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 		public function __construct() {
 			parent::__construct();
 
-			$this->template_name = 'print.php';
-			$this->template_dir_name = 'delivery-notes/';
+			global $woocommerce;
+			
 			$this->template_base = 'templates/';
-			$this->template_base_in_theme = 'woocommerce/';
+			$this->theme_base = $woocommerce->template_url;
+			$this->template_dir = 'delivery-notes/';
+			$this->theme_path = trailingslashit(get_stylesheet_directory()); 
 		}
 
 		/**
@@ -37,34 +38,57 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 		 *
 		 * @since 1.0
 		 */
-		public function get_template_content() {
-
-			// Check for a custom template folder in the theme
-			$is_custom_html = @file_exists( trailingslashit( get_stylesheet_directory() ) . $this->template_base_in_theme . $this->template_dir_name . $this->template_name);
-			if ( $is_custom_html ) {
-				$this->template_dir_url = trailingslashit( get_stylesheet_directory_uri() ) . $this->template_base_in_theme . $this->template_dir_name;
-				$this->template_dir_path = trailingslashit( get_stylesheet_directory() ) . $this->template_base_in_theme . $this->template_dir_name;
-			} else {
-				$this->template_dir_url = $this->template_base . $this->template_dir_name;
-				$this->template_dir_path = $this->template_base . $this->template_dir_name;
+		public function get_template_content( $slug, $name = '' ) {
+			$template = null;
+			$template_file = null;
+			
+			// Look in yourtheme/woocommerce/delivery-notes/
+			$template_file = $this->theme_path . $this->theme_base . $this->template_dir . $slug.'-'.$name.'.php';
+			if(!$template && $name && file_exists($template_file)) {
+				$template = $template_file;
+				$this->template_url = trailingslashit(get_stylesheet_directory_uri()) . $this->theme_base . $this->template_dir;
+			} 
+						
+			// Fall back to slug.php in yourtheme/woocommerce/delivery-notes/			
+			$template_file = $this->theme_path . $this->theme_base . $this->template_dir . $slug.'.php';
+			if (!$template && file_exists($template_file)) {
+				$template = $template_file;
+				$this->template_url = trailingslashit(get_stylesheet_directory_uri()) . $this->theme_base . $this->template_dir;
 			}
 			
 			// Legacy support for old custom template folder structure
-			$legacy_is_custom_html = @file_exists( trailingslashit( get_stylesheet_directory() ) . $this->template_base_in_theme . 'delivery-note-template/template.php' );
-			if( $legacy_is_custom_html ) {
-				$this->template_dir_url = trailingslashit( get_stylesheet_directory_uri() ) . $this->template_base_in_theme . 'delivery-note-template/';
-				$this->template_dir_path = trailingslashit( get_stylesheet_directory() ) . $this->template_base_in_theme . 'delivery-note-template/';
-				$this->template_name = 'template.php';
+			$template_file = $this->theme_path . $this->theme_base . 'delivery-note-template/template.php';
+			if (!$template && file_exists($template_file)) {
+				$template = $template_file;
+				$this->template_url = trailingslashit(get_stylesheet_directory_uri()) . 'delivery-note-template/';
 			}
 			
-			// Read the file
-			ob_start();
-			require_once $this->template_dir_path . $this->template_name;
-			$content = ob_get_clean();
+			// Look in pluginname/templates/delivery-notes/
+			$template_file = $this->plugin_path . $this->template_base . $this->template_dir . $slug.'-'.$name.'.php';
+			if (!$template && $name && file_exists($template_file)) {
+				$template = $template_file;
+				$this->template_url = $this->plugin_url . $this->template_base . $this->template_dir;
+			}
 
-			return $content;
+			// Fall back to slug.php in pluginname/templates/delivery-notes/			
+			$template_file = $this->plugin_path . $this->template_base . $this->template_dir . $slug.'.php';
+			if (!$template && file_exists($template_file)) {
+				$template = $template_file;
+				$this->template_url = $this->plugin_url . $this->template_base . $this->template_dir;
+			}
+			
+			// Return the content of the template
+			if($template) {
+				ob_start();
+				require_once($template);
+				$content = ob_get_clean();
+				return $content;
+			}
+			
+			// Return no content when no file was found
+			return;
 		}
-
+		
 		/**
 		 * Get the current order
 		 *

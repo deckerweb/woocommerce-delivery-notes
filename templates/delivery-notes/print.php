@@ -22,7 +22,7 @@
 		<div id="content">			
 			<div id="page">
 				<div id="letter-header">
-					<div class="heading"><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?></div>
+					<div class="heading"><?php if( wcdn_template_name() == 'invoice' ) : ?><?php _e( 'Invoice', 'woocommerce-delivery-notes' ); ?><?php else : ?><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?><?php endif; ?></div>
 					<div class="company-name"><?php
 						if ( wcdn_custom_company_name() ) {
 							echo wcdn_custom_company_name();

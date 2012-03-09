@@ -1,15 +1,6 @@
 <?php
 /**
  * Load all available data for the Delivery Notes printing page.
- *
- * @package   WooCommerce Delivery Notes
- * @author    David Decker - DECKERWEB
- * @copyright Copyright 2011-2012, David Decker - DECKERWEB
- * @license   http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)
- * @link      http://genesisthemes.de/en/wp-plugins/woocommerce-delivery-notes/
- * @link      http://twitter.com/#!/deckerweb
- *
- * @since 1.0
  */
 
 /**
@@ -57,7 +48,20 @@ $wcdn_print = new WooCommerce_Delivery_Notes_Print();
 if ( !function_exists( 'wcdn_template_url' ) ) {
 	function wcdn_template_url() {
 		global $wcdn_print;
-		return $wcdn_print->template_dir_url;
+		return $wcdn_print->template_url;
+	}
+}
+
+
+/**
+ * Return Type of print
+ *
+ * @since 1.0
+ */
+if ( !function_exists( 'wcdn_template_name' ) ) {
+	function wcdn_template_name() {
+		global $wcdn_print;
+		return $_GET['name'];
 	}
 }
 
@@ -495,4 +499,4 @@ if ( !function_exists( 'wcdn_footer_imprint' ) ) {
  *
  * @since 1.0
  */
-echo $wcdn_print->get_template_content();
+echo $wcdn_print->get_template_content($_GET['slug'], $_GET['name']);

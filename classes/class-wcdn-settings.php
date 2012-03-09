@@ -112,7 +112,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		 * @since 1.0
 		 */
 		public function add_settings_tab($tabs) {
-			$tabs[$this->tab_name] = __( 'Delivery Note', 'woocommerce-delivery-notes' );
+			$tabs[$this->tab_name] = __( 'Orders', 'woocommerce-delivery-notes' );
 			
 			return $tabs;
 		}
@@ -125,7 +125,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		 */
 		public function create_settings_page() {
 			?>
-			<h3><?php _e( 'Information and Notes', 'woocommerce-delivery-notes' ); ?></h3>
+			<h3><?php _e( 'Print Information for Invoices and Delivery Notes', 'woocommerce-delivery-notes' ); ?></h3>
 			<table class="form-table">
 				<tbody>
 					<tr>
