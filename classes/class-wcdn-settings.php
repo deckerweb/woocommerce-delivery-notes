@@ -125,7 +125,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		 */
 		public function create_settings_page() {
 			?>
-			<h3><?php _e( 'Print Information for Invoices and Delivery Notes', 'woocommerce-delivery-notes' ); ?></h3>
+			<h3><?php _e( 'Invoices and Delivery Notes', 'woocommerce-delivery-notes' ); ?></h3>
 			<table class="form-table">
 				<tbody>
 					<tr>
@@ -133,12 +133,12 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 							<label for="<?php echo $this->prefix; ?>custom_company_name"><?php _e( 'Company/Shop Name:', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<textarea name="<?php echo $this->prefix; ?>custom_company_name" rows="1" class="large-text code"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'custom_company_name' ) ); ?></textarea>
-							<span class="description"><?php
-								echo __( 'Your custom company or shop name for the Delivery Note.', 'woocommerce-delivery-notes' );
-								echo '<br /><strong>' . __( 'Note:', 'woocommerce-delivery-notes' ) . '</strong> ';
-								echo __( 'Leave blank to use your default Website/ Blog title defined in WordPress settings.', 'woocommerce-delivery-notes' );
-							?></span>
+							<textarea name="<?php echo $this->prefix; ?>custom_company_name" rows="2" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'custom_company_name' ) ); ?></textarea>
+							<span class="description">
+								<?php _e( 'Your custom company or shop name for the Delivery Note.', 'woocommerce-delivery-notes' ); ?>
+								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong>
+								<?php _e( 'Leave blank to use the default Website/ Blog title defined in WordPress settings.', 'woocommerce-delivery-notes' ); ?>
+							</span>
 						</td>
 					</tr>
 					<tr>
@@ -146,12 +146,12 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 							<label for="<?php echo $this->prefix; ?>company_address"><?php _e( 'Company/Shop Address:', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<textarea name="<?php echo $this->prefix; ?>company_address" rows="6" class="large-text code"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'company_address' ) ); ?></textarea>
-							<span class="description"><?php
-								echo __( 'The postal address of the company/shop, which gets printed right of the company/shop name, above the order listings.', 'woocommerce-delivery-notes' );
-								echo '<br /><strong>' . __( 'Note:', 'woocommerce-delivery-notes' ) . '</strong> ';
-								echo __( 'Here, you can also add some other contact information like the telephone and email.', 'woocommerce-delivery-notes' );
-							?></span>
+							<textarea name="<?php echo $this->prefix; ?>company_address" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'company_address' ) ); ?></textarea>
+							<span class="description">
+								<?php _e( 'The postal address of the company/shop, which gets printed right of the company/shop name, above the order listings.', 'woocommerce-delivery-notes' ); ?>
+								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong>
+								<?php _e('Leave blank to not print an address.', 'woocommerce-delivery-notes' ); ?>
+							</span>
 						</td>
 					</tr>
 					<tr>
@@ -159,12 +159,12 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 							<label for="<?php echo $this->prefix; ?>personal_notes"><?php _e( 'Personal Notes:', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<textarea name="<?php echo $this->prefix; ?>personal_notes" rows="3" class="large-text code"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'personal_notes' ) ); ?></textarea>
-							<span class="description"><?php
-								echo __( 'Add some personal notes, or season greetings or whatever (e.g. Thank You for Your Order!, Merry Christmas!, etc.).', 'woocommerce-delivery-notes' );
-								echo '<br /><strong>' . __( 'Note:', 'woocommerce-delivery-notes' ) . '</strong> ';
-								echo __( 'This info gets printed below the order listings but above the regular shipping notes (added at WooCommerce single order pages). These personal notes here will get styled with bigger font size.', 'woocommerce-delivery-notes' );
-							?></span>
+							<textarea name="<?php echo $this->prefix; ?>personal_notes" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'personal_notes' ) ); ?></textarea>
+							<span class="description">
+								<?php _e( 'Add some personal notes, or season greetings or whatever (e.g. Thank You for Your Order!, Merry Christmas!, etc.).', 'woocommerce-delivery-notes' ); ?>
+								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong>
+								<?php _e('Leave blank to not print any personal notes.', 'woocommerce-delivery-notes' ); ?>
+							</span>
 						</td>
 					</tr>
 					<tr>
@@ -172,12 +172,12 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 							<label for="<?php echo $this->prefix; ?>policies_conditions"><?php _e( 'Returns Policy, Conditions, etc.:', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<textarea name="<?php echo $this->prefix; ?>policies_conditions" rows="6" class="large-text code"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'policies_conditions' ) ); ?></textarea>
-							<span class="description"><?php
-								echo __( 'Here you can add some more policies, conditions etc. For example add a returns policy in case the client would like to send back some goods.', 'woocommerce-delivery-notes' );
-								echo '<br /><strong>' . __( 'Note:', 'woocommerce-delivery-notes' ) . '</strong> ';
-								echo __( 'In some countries (e.g. in the European Union) this is required so please add any required info in accordance with the statutory regulations.', 'woocommerce-delivery-notes' );
-							?></span>
+							<textarea name="<?php echo $this->prefix; ?>policies_conditions" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'policies_conditions' ) ); ?></textarea>
+							<span class="description">
+								<?php _e( 'Here you can add some more policies, conditions etc. For example add a returns policy in case the client would like to send back some goods. In some countries (e.g. in the European Union) this is required so please add any required info in accordance with the statutory regulations.', 'woocommerce-delivery-notes' ); ?>
+								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong> 
+								<?php _e('Leave blank to not print any policies or conditions.', 'woocommerce-delivery-notes' ); ?>
+							</span>
 						</td>
 					</tr>
 					<tr>
@@ -185,14 +185,15 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 							<label for="<?php echo $this->prefix; ?>footer_imprint"><?php _e( 'Footer Imprint:', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<textarea name="<?php echo $this->prefix; ?>footer_imprint" rows="2" class="large-text code"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'footer_imprint' ) ); ?></textarea>
-							<span class="description"><?php
-								echo __( 'Add some further footer imprint, copyright notes etc. to get the printed sheets a bit more branded to your needs.', 'woocommerce-delivery-notes' );
-								echo '<br /><strong>' . __( 'Note:', 'woocommerce-delivery-notes' ) . '</strong> ';
-								echo __(' This footer info gets printed in lower font size and a bit lighter text color.', 'woocommerce-delivery-notes' );
-								?></span>
+							<textarea name="<?php echo $this->prefix; ?>footer_imprint" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'footer_imprint' ) ); ?></textarea>
+							<span class="description">
+								<?php _e( 'Add some further footer imprint, copyright notes etc. to get the printed sheets a bit more branded to your needs.', 'woocommerce-delivery-notes' ); ?>
+								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong> 
+								<?php _e('Leave blank to not print a footer.', 'woocommerce-delivery-notes' ); ?>
+							</span>
 						</td>
 					</tr>
+					
 				</tbody>
 			</table>
 			
@@ -208,12 +209,19 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		 */
 		public function save_settings_page() {
 			if ( isset( $_POST[ $this->hidden_submit ] ) && $_POST[ $this->hidden_submit ] == 'submitted' ) {
+				//die(print_r($_POST));
 				foreach ( $_POST as $key => $value ) {
-					if ( get_option( $key ) != $value ) {
-						update_option( $key, $value );
-					}
-					else {
-						add_option( $key, $value, '', 'no' );
+					if($key != $this->hidden_submit && strpos($key, $this->prefix) !== false ) {
+						if( empty( $value ) ) {
+							delete_option( $key );
+						} else {
+							if ( get_option( $key ) && get_option( $key ) != $value ) {
+								update_option( $key, $value );
+							}
+							else {
+								add_option( $key, $value );
+							}
+						}
 					}
 				}
 			}

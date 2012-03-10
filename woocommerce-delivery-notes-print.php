@@ -67,6 +67,25 @@ if ( !function_exists( 'wcdn_template_name' ) ) {
 
 
 /**
+ * Return javascript
+ *
+ * @since 1.0
+ */
+if ( !function_exists( 'wcdn_template_javascript' ) ) {
+	function wcdn_template_javascript() {
+		$js = '
+		<script type="text/javascript">
+			function openPrintWindow() {
+		    	window.print();
+		    	return false;
+			}			
+		</script>';
+		return $js;
+	}
+}
+	
+	
+/**
  * Return default title name of Delivery Note (= default Website Name)
  *
  * @since 1.0

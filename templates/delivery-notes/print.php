@@ -4,11 +4,7 @@
 	<meta charset="utf-8">
 	<title><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?></title>
 	<link rel="stylesheet" href="<?php echo wcdn_template_url(); ?>css/style.css" type="text/css" media="screen,print" charset="utf-8"/>
-	<script type="text/javascript">
-		function openPrintWindow() {
-		    window.print();
-		}
-	</script>
+	<?php echo wcdn_template_javascript(); ?>
 </head>
 
 <body>
@@ -30,7 +26,7 @@
 							echo wcdn_company_name();
 						} ?></div>
 					<div class="company-info"><?php echo wcdn_company_info(); ?></div>
-				</div><!-- #wcdn-head -->
+				</div><!-- #letter-header -->
 				
 				<div id="order-listing">
 					<h3><?php _e( 'Recipient:', 'woocommerce-delivery-notes' ); ?></h3>
@@ -128,7 +124,7 @@
 
 				<div id="letter-footer">
 					<div class="imprint"><?php echo wcdn_footer_imprint(); ?></div>
-				</div><!-- #wcdn-footer -->
+				</div><!-- #letter-footer -->
 			</div><!-- #page -->
 		</div><!-- #content -->
 		
