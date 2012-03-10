@@ -83,9 +83,9 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 			global $post_id;
 
 			?>
-			<ul class="delivery-notes-actions">
-				<li><a href="<?php echo $this->plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>&slug=print&name=invoice" id="print_invoice" class="button button" target="_blank"><?php _e( 'Print Invoice', 'woocommerce-delivery-notes' ); ?></a></li>
-				<li><a href="<?php echo $this->plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>&slug=print&name=delivery-note" id="print_delivery_note" class="button button" target="_blank"><?php _e( 'Print Delivery Note', 'woocommerce-delivery-notes' ); ?></a></li>
+			<ul class="woocommerce-delivery-notes-actions">
+				<li><a href="<?php echo $this->plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>&slug=print&name=invoice" id="woocommerce-delivery-notes-print-invoice" class="button button" target="_blank"><?php _e( 'Print Invoice', 'woocommerce-delivery-notes' ); ?></a></li>
+				<li><a href="<?php echo $this->plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>&slug=print&name=delivery-note" id="woocommerce-delivery-notes-print-delivery-note" class="button button" target="_blank"><?php _e( 'Print Delivery Note', 'woocommerce-delivery-notes' ); ?></a></li>
 			</ul>
 			<?php
 		}
