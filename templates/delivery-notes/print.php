@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?></title>
+	<title><?php if( wcdn_template_name() == 'invoice' ) : ?><?php _e( 'Invoice', 'woocommerce-delivery-notes' ); ?><?php else : ?><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?><?php endif; ?></title>
 	<link rel="stylesheet" href="<?php echo wcdn_template_url(); ?>css/style.css" type="text/css" media="screen,print" charset="utf-8"/>
 	<?php echo wcdn_template_javascript(); ?>
 </head>
