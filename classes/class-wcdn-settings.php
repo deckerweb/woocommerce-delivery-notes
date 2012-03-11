@@ -193,7 +193,15 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 							</span>
 						</td>
 					</tr>
-					
+					<tr>
+						<th>
+							<?php _e( 'Print Preview:', 'woocommerce-delivery-notes' ); ?>
+						</th>
+						<td>
+							<input name="<?php echo $this->prefix; ?>open_print_window" type="hidden" value="no" />
+							<label for="<?php echo $this->prefix; ?>open_print_window"><input name="<?php echo $this->prefix; ?>open_print_window" type="checkbox" value="yes" <?php checked( get_option( $this->prefix . 'open_print_window' ), 'yes' );?> /> <?php _e( 'Start printing when the preview page opens', 'woocommerce-delivery-notes' ); ?></label>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 			
@@ -209,7 +217,6 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		 */
 		public function save_settings_page() {
 			if ( isset( $_POST[ $this->hidden_submit ] ) && $_POST[ $this->hidden_submit ] == 'submitted' ) {
-				//die(print_r($_POST));
 				foreach ( $_POST as $key => $value ) {
 					if($key != $this->hidden_submit && strpos($key, $this->prefix) !== false ) {
 						if( empty( $value ) ) {

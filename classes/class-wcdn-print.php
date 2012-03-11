@@ -12,8 +12,10 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 		public $template_url;
 		public $template_dir;
 		public $template_base;
+		public $template_name;
 		public $theme_base;
 		public $theme_path;
+		public $order_id;
 
 		private $order;
 
@@ -22,15 +24,33 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 		 *
 		 * @since 1.0
 		 */
-		public function __construct() {
+		public function __construct( $order_id = 0 ) {
 			parent::__construct();
-
+			
 			global $woocommerce;
 			
+			$this->order_id = $order_id;
+			$this->template_name = 'delivery-note';
 			$this->template_base = 'templates/';
 			$this->theme_base = $woocommerce->template_url;
 			$this->template_dir = 'delivery-notes/';
 			$this->theme_path = trailingslashit(get_stylesheet_directory()); 
+			
+			if ( $this->order_id > 0 ) {
+				$this->order = new WC_Order( $this->order_id );
+			}
+			
+			if ( $this->is_woocommerce_activated() ) {
+				//add_action( 'admin_init', array( $this, 'load_hooks' ) );
+			}			
+		}
+
+		/**
+		 * Load the admin hooks
+		 *
+		 * @since 1.0
+		 */
+		public function load_hooks() {
 		}
 
 		/**
@@ -38,7 +58,17 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 		 *
 		 * @since 1.0
 		 */
-		public function get_template_content( $slug, $name = '' ) {
+		public function get_print_page( $template_name = 'delivery-note' ) {
+			$this->template_name = $template_name;
+			return $this->get_template_content( 'print', $this->template_name );
+		}
+
+		/**
+		 * Read the template file
+		 *
+		 * @since 1.0
+		 */
+		private function get_template_content( $slug, $name = '' ) {
 			$template = null;
 			$template_file = null;
 			
@@ -94,10 +124,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 		 *
 		 * @since 1.0
 		 */
-		public function get_order( $order_id ) {
-			if ( !isset( $this->order ) && $order_id ) {
-				$this->order = new woocommerce_order( $order_id );
-			}
+		public function get_order() {
 			return $this->order;
 		}
 
@@ -107,13 +134,15 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 		 * @since 1.0
 		 * @version 1.1
 		 */
-		public function get_order_items( $order_id ) {
-
+		public function get_order_items() {
 			global $woocommerce;
 			global $_product;
 
-			$order = $this->get_order( $order_id );
-			$items = $order->get_items();
+			if(!$this->order) {
+				return;
+			}
+
+			$items = $this->order->get_items();
 			$data_list = array();
 		
 			if ( sizeof( $items ) > 0 ) {
@@ -142,12 +171,12 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 					
 					// Set item download url
 					$data['download_url'] = null;
-					if ( $product->exists && $product->is_downloadable() && $order->status == 'completed' ) {
-						$data['download_url'] = $order->get_downloadable_file_url( $item['id'], $item['variation_id'] );
+					if ( $product->exists && $product->is_downloadable() && $this->order->status == 'completed' ) {
+						$data['download_url'] = $this->order->get_downloadable_file_url( $item['id'], $item['variation_id'] );
 					}
 
 					// Set the price
-					$data['price'] = $order->get_formatted_line_subtotal($item);
+					$data['price'] = $this->order->get_formatted_line_subtotal($item);
 					
 					// Set the single price
 					$data['single_price'] = $product->get_price();
@@ -181,4 +210,4 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 
 }
 
-?> 
+?>
