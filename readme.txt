@@ -10,7 +10,7 @@ This plugin adds invoices and delivery notes for the WooCommerce shop plugin. Yo
 
 == Description ==
 
-With this plugin you can print out delivery notes for the orders via the WooCommerce Shop Plugin. You can edit the Company/Shop name, Company/Shop postal address and also add personal notes, conditions/policies (like a refund policy) and a footer imprint/branding.
+With this plugin you can print out invoices and delivery notes for the orders via the WooCommerce Shop Plugin. You can edit the Company/Shop name, Company/Shop postal address and also add personal notes, conditions/policies (like a refund policy) and a footer imprint/branding.
 
 The plugin adds a new side panel on the order page to allow shop administrators to print out delivery notes. This is useful for a lot of shops that sell goods which need delivery notes for shipping or with added refund policies etc. In some countries (e.g. in the European Union) such refund policies are required so this plugin could help to combine this with the order info for the customer.
 

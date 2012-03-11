@@ -1,8 +1,8 @@
 <?php
 /**
- * This plugin adds simple Delivery Notes for the WooCommerce Shop Plugin. You can add company/shop info as well as personal notes and policies to the print page.
+ * Print order invoices and delivery notes for the WooCommerce shop plugin. You can add company/shop info as well as personal notes and policies to the print page.
  *
- * @package   WooCommerce Delivery Notes
+ * @package   WooCommerce - Invoices & Delivery Notes
  * @link      http://twitter.com/#!/deckerweb
  * @copyright Copyright 2011 Steve Clark, Trigvvy Gunderson, David Decker - DECKERWEB
  *
@@ -10,9 +10,9 @@
  * @link http://www.clark-studios.co.uk/blog/
  * @link https://github.com/piffpaffpuff
  *
- * Plugin Name: WooCommerce Delivery Notes
+ * Plugin Name: WooCommerce - Invoices & Delivery Notes
  * Plugin URI: http://genesisthemes.de/en/wp-plugins/woocommerce-delivery-notes/
- * Description: This plugin adds simple Delivery Notes for the WooCommerce Shop Plugin. You can add company/shop info as well as personal notes and policies to the print page.
+ * Description: Print order invoices and delivery notes for the WooCommerce shop plugin. You can add company/shop info as well as personal notes and policies to the print page.
  * Version: 1.1
  * Author: Steve Clark, Triggvy Gunderson, David Decker
  * Author URI: http://deckerweb.de/
