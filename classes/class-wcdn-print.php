@@ -188,7 +188,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 					$data['weight'] = $product->get_weight();
 					
 					// Set item dimensions
-					$data['weight'] = $product->get_dimensions();
+					$data['dimensions'] = $product->get_dimensions();
 					
 					$data_list[] = $data;
 				}

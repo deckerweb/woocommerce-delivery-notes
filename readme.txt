@@ -4,7 +4,7 @@ Donate link: http://genesisthemes.de/en/donate/
 Tags: delivery notes, delivery, shipping, print, order, invoice, woocommerce, woo commerce, woothemes, administration, shop, shop manager, deckerweb
 Requires at least: 3.3 and WooCommerce 1.4+
 Tested up to: 3.3.1
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 This plugin adds invoices and delivery notes for the WooCommerce shop plugin. You can add company info as well as personal notes and policies to the print page.
 
@@ -95,6 +95,7 @@ The basic intention is to have the plugin at the same time as leightweight and u
 
 = 1.1.2 =
 * Basic invoice template support
+* Custom order number
 
 = 1.1.1 =
 * Restructured classes
