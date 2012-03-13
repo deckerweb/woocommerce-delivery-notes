@@ -130,7 +130,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 				<tbody>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>custom_company_name"><?php _e( 'Company/Shop Name:', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo $this->prefix; ?>custom_company_name"><?php _e( 'Company/Shop Name', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
 							<textarea name="<?php echo $this->prefix; ?>custom_company_name" rows="2" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'custom_company_name' ) ); ?></textarea>
@@ -143,7 +143,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 					</tr>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>company_address"><?php _e( 'Company/Shop Address:', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo $this->prefix; ?>company_address"><?php _e( 'Company/Shop Address', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
 							<textarea name="<?php echo $this->prefix; ?>company_address" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'company_address' ) ); ?></textarea>
@@ -156,7 +156,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 					</tr>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>personal_notes"><?php _e( 'Personal Notes:', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo $this->prefix; ?>personal_notes"><?php _e( 'Personal Notes', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
 							<textarea name="<?php echo $this->prefix; ?>personal_notes" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'personal_notes' ) ); ?></textarea>
@@ -182,7 +182,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 					</tr>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>footer_imprint"><?php _e( 'Footer Imprint:', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo $this->prefix; ?>footer_imprint"><?php _e( 'Footer Imprint', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
 							<textarea name="<?php echo $this->prefix; ?>footer_imprint" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'footer_imprint' ) ); ?></textarea>
@@ -195,11 +195,46 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 					</tr>
 					<tr>
 						<th>
-							<?php _e( 'Print Preview:', 'woocommerce-delivery-notes' ); ?>
+							<?php _e( 'Preview', 'woocommerce-delivery-notes' ); ?>
 						</th>
 						<td>
 							<input name="<?php echo $this->prefix; ?>open_print_window" type="hidden" value="no" />
 							<label for="<?php echo $this->prefix; ?>open_print_window"><input name="<?php echo $this->prefix; ?>open_print_window" type="checkbox" value="yes" <?php checked( get_option( $this->prefix . 'open_print_window' ), 'yes' );?> /> <?php _e( 'Start printing when the preview page opens', 'woocommerce-delivery-notes' ); ?></label>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3><?php _e( 'Order Number Options', 'woocommerce-delivery-notes' ); ?></h3>
+			<table class="form-table">
+				<tbody>		
+					<tr>
+						<th>
+							<label for="<?php echo $this->prefix; ?>before_order_number"><?php _e( 'Before number', 'woocommerce-delivery-notes' ); ?></label>
+						</th>
+						<td>
+							<input name="<?php echo $this->prefix; ?>before_order_number" type="text" value="<?php echo wp_kses_stripslashes( get_option( $this->prefix . 'before_order_number' ) ); ?>" />
+							<span class="description"><?php _e('This text will be placed before the order number ie. "YOUR-TEXT123".'); ?></span>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label for="<?php echo $this->prefix; ?>after_order_number"><?php _e( 'After number', 'woocommerce-delivery-notes' ); ?></label>
+						</th>
+						<td>
+							<input name="<?php echo $this->prefix; ?>after_order_number" type="text" value="<?php echo wp_kses_stripslashes( get_option( $this->prefix . 'after_order_number' ) ); ?>" />
+							<span class="description"><?php _e('This text will be placed after the order number ie. "123YOUR-TEXT".'); ?></span>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label for="<?php echo $this->prefix; ?>order_number_offset"><?php _e( 'Offset', 'woocommerce-delivery-notes' ); ?></label>
+						</th>
+						<td>
+							<?php $value = intval( get_option( $this->prefix . 'order_number_offset' ) ); ?>
+							<input name="<?php echo $this->prefix; ?>order_number_offset" type="text" value="<?php echo (is_int($value) ? wp_kses_stripslashes( $value ) : ''); ?>" />
+							<span class="description"><?php _e('This sets an offset from where the numbering should start.'); ?>
+							<strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong> 
+							<?php _e('Only numbers are allowed.', 'woocommerce-delivery-notes' ); ?></span>
 						</td>
 					</tr>
 				</tbody>

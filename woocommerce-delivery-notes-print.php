@@ -284,7 +284,11 @@ if ( !function_exists( 'wcdn_shipping_notes' ) ) {
 if ( !function_exists( 'wcdn_order_number' ) ) {
 	function wcdn_order_number() {
 		global $wcdn_print;
-		return $wcdn_print->order_id;
+		$before = trim($wcdn_print->get_setting( 'before_order_number' ));
+		$after = trim($wcdn_print->get_setting( 'after_order_number' ));
+		$offset = trim($wcdn_print->get_setting( 'order_number_offset' ));
+		$number = $before . ( intval( $offset ) + intval( $wcdn_print->order_id ) ) . $after;
+		return wp_kses_stripslashes( $number );
 	}
 }
 
