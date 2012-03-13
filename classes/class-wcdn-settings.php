@@ -209,7 +209,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 				<tbody>		
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>before_order_number"><?php _e( 'Before number', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo $this->prefix; ?>before_order_number"><?php _e( 'Text before', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
 							<input name="<?php echo $this->prefix; ?>before_order_number" type="text" value="<?php echo wp_kses_stripslashes( get_option( $this->prefix . 'before_order_number' ) ); ?>" />
@@ -218,7 +218,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 					</tr>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>after_order_number"><?php _e( 'After number', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo $this->prefix; ?>after_order_number"><?php _e( 'Text after', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
 							<input name="<?php echo $this->prefix; ?>after_order_number" type="text" value="<?php echo wp_kses_stripslashes( get_option( $this->prefix . 'after_order_number' ) ); ?>" />
@@ -232,7 +232,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 						<td>
 							<?php $value = intval( get_option( $this->prefix . 'order_number_offset' ) ); ?>
 							<input name="<?php echo $this->prefix; ?>order_number_offset" type="text" value="<?php echo (is_int($value) ? wp_kses_stripslashes( $value ) : ''); ?>" />
-							<span class="description"><?php _e('This sets an offset from where the numbering should start.'); ?>
+							<span class="description"><?php _e('This adds an offset to the WooCommerce order numbering. Helpful to keep a continuous numbering from a different shop system.'); ?>
 							<strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong> 
 							<?php _e('Only numbers are allowed.', 'woocommerce-delivery-notes' ); ?></span>
 						</td>
