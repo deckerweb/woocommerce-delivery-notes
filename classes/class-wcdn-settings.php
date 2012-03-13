@@ -232,7 +232,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 						<td>
 							<?php $value = intval( get_option( $this->prefix . 'order_number_offset' ) ); ?>
 							<input name="<?php echo $this->prefix; ?>order_number_offset" type="text" value="<?php echo (is_int($value) ? wp_kses_stripslashes( $value ) : ''); ?>" />
-							<span class="description"><?php _e('This adds an offset to the WooCommerce order numbering. Helpful to keep a continuous numbering from a different shop system.'); ?>
+							<span class="description"><?php _e('This adds an offset to the WooCommerce order numbering. Helpful for a contiguous numbering.'); ?>
 							<strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong> 
 							<?php _e('Only numbers are allowed.', 'woocommerce-delivery-notes' ); ?></span>
 						</td>
