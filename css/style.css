@@ -1,11 +1,10 @@
 ul.woocommerce-delivery-notes-actions {
 	margin: 0px;
-	overflow: hidden;
 }
 ul.woocommerce-delivery-notes-actions li {
-	float: left;
+	display: inline-block;
 	text-align: center;
 	padding: 6px 0px;
 	margin: 0px;
-	width: 50%;
+	width: 49%;
 }
