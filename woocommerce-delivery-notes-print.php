@@ -251,8 +251,10 @@ if ( !function_exists( 'wcdn_shipping_postcode' ) ) {
  */
 if ( !function_exists( 'wcdn_shipping_country' ) ) {
 	function wcdn_shipping_country() {
-		global $wcdn_print;
-		return $wcdn_print->get_order()->shipping_country;
+		global $wcdn_print, $woocommerce;
+		$country = $wcdn_print->get_order()->shipping_country;
+		$full_country = (isset($woocommerce->countries->countries[$country])) ? $woocommerce->countries->countries[$country] : $country;
+		return $full_country;
 	}
 }
 
