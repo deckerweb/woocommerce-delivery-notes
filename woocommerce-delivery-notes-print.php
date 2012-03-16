@@ -21,7 +21,7 @@ if ( !defined( 'ABSPATH' ) ) {
  *
  * @since 1.0
  */
-if (!current_user_can('edit_others_posts') || empty($id) || empty($name)) {
+if (!current_user_can('manage_woocommerce_orders') || empty($id) || empty($name)) {
 	wp_die( __( 'You do not have sufficient permissions to access this page.', 'woocommerce-delivery-notes' ) );
 }
 
