@@ -7,7 +7,7 @@
  */
 if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 
-	class WooCommerce_Delivery_Notes_Print extends WooCommerce_Delivery_Notes_Base {
+	class WooCommerce_Delivery_Notes_Print {
 
 		public $template_url;
 		public $template_dir;
@@ -24,9 +24,15 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 		 *
 		 * @since 1.0
 		 */
-		public function __construct( $order_id = 0 ) {
-			parent::__construct();
-			
+		public function __construct() {					
+		}
+		
+		/**
+		 * Load the class
+		 *
+		 * @since 1.0
+		 */
+		public function load( $order_id = 0 ) {
 			global $woocommerce;
 			
 			$this->order_id = $order_id;
@@ -38,10 +44,6 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 			
 			if ( $this->order_id > 0 ) {
 				$this->order = new WC_Order( $this->order_id );
-			}
-			
-			if ( $this->is_woocommerce_activated() ) {
-				//add_action( 'admin_init', array( $this, 'load_hooks' ) );
 			}			
 		}
 
@@ -94,17 +96,17 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 			}
 			
 			// Look in pluginname/templates/delivery-notes/
-			$template_file = $this->plugin_path . $this->template_base . $this->template_dir . $slug.'-'.$name.'.php';
+			$template_file = WooCommerce_Delivery_Notes::$plugin_path . $this->template_base . $this->template_dir . $slug.'-'.$name.'.php';
 			if (!$template && $name && file_exists($template_file)) {
 				$template = $template_file;
-				$this->template_url = $this->plugin_url . $this->template_base . $this->template_dir;
+				$this->template_url = WooCommerce_Delivery_Notes::$plugin_url . $this->template_base . $this->template_dir;
 			}
 
 			// Fall back to slug.php in pluginname/templates/delivery-notes/			
-			$template_file = $this->plugin_path . $this->template_base . $this->template_dir . $slug.'.php';
+			$template_file = WooCommerce_Delivery_Notes::$plugin_path . $this->template_base . $this->template_dir . $slug.'.php';
 			if (!$template && file_exists($template_file)) {
 				$template = $template_file;
-				$this->template_url = $this->plugin_url . $this->template_base . $this->template_dir;
+				$this->template_url = WooCommerce_Delivery_Notes::$plugin_url . $this->template_base . $this->template_dir;
 			}
 			
 			// Return the content of the template
@@ -203,7 +205,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Print' ) ) {
 		 * @since 1.0
 		 */
 		public function get_setting( $name ) {
-			return get_option( $this->prefix . $name );
+			return get_option( WooCommerce_Delivery_Notes::$plugin_prefix . $name );
 		}
 	
 	}

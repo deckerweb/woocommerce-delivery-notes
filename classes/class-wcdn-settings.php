@@ -7,7 +7,7 @@
  */
 if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 
-	class WooCommerce_Delivery_Notes_Settings extends WooCommerce_Delivery_Notes_Base {
+	class WooCommerce_Delivery_Notes_Settings {
 	
 		private $tab_name;
 		private $hidden_submit;
@@ -17,15 +17,18 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		 *
 		 * @since 1.0
 		 */
-		public function __construct() {
-			parent::__construct();
-			
+		public function __construct() {			
 			$this->tab_name = 'delivery-notes';
-			$this->hidden_submit = $this->prefix . 'submit';
+			$this->hidden_submit = WooCommerce_Delivery_Notes::$plugin_prefix . 'submit';
+		}
 
-			if ( $this->is_woocommerce_activated() ) {
-				add_action( 'admin_init', array( $this, 'load_hooks' ) );
-			}
+		/**
+		 * Load the class
+		 *
+		 * @since 1.0
+		 */
+		public function load() {
+			add_action( 'admin_init', array( $this, 'load_hooks' ) );
 		}
 
 		/**
@@ -34,7 +37,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		 * @since 1.0
 		 */
 		public function load_hooks() {	
-			add_filter( 'plugin_action_links_' . $this->plugin_basefile, array( $this, 'add_settings_link') );
+			add_filter( 'plugin_action_links_' . WooCommerce_Delivery_Notes::$plugin_basefile, array( $this, 'add_settings_link') );
 			add_filter( 'woocommerce_settings_tabs_array', array( $this, 'add_settings_tab') );
 			add_action( 'woocommerce_settings_tabs_' . $this->tab_name, array( $this, 'create_settings_page') );
 			add_action( 'woocommerce_update_options_' . $this->tab_name, array( $this, 'save_settings_page') );
@@ -130,10 +133,10 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 				<tbody>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>custom_company_name"><?php _e( 'Company/Shop Name', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>custom_company_name"><?php _e( 'Company/Shop Name', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<textarea name="<?php echo $this->prefix; ?>custom_company_name" rows="2" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'custom_company_name' ) ); ?></textarea>
+							<textarea name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>custom_company_name" rows="2" class="large-text"><?php echo wp_kses_stripslashes( get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'custom_company_name' ) ); ?></textarea>
 							<span class="description">
 								<?php _e( 'Your custom company or shop name for the Delivery Note.', 'woocommerce-delivery-notes' ); ?>
 								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong>
@@ -143,10 +146,10 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 					</tr>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>company_address"><?php _e( 'Company/Shop Address', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>company_address"><?php _e( 'Company/Shop Address', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<textarea name="<?php echo $this->prefix; ?>company_address" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'company_address' ) ); ?></textarea>
+							<textarea name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>company_address" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'company_address' ) ); ?></textarea>
 							<span class="description">
 								<?php _e( 'The postal address of the company/shop, which gets printed right of the company/shop name, above the order listings.', 'woocommerce-delivery-notes' ); ?>
 								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong>
@@ -156,10 +159,10 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 					</tr>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>personal_notes"><?php _e( 'Personal Notes', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>personal_notes"><?php _e( 'Personal Notes', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<textarea name="<?php echo $this->prefix; ?>personal_notes" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'personal_notes' ) ); ?></textarea>
+							<textarea name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>personal_notes" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'personal_notes' ) ); ?></textarea>
 							<span class="description">
 								<?php _e( 'Add some personal notes, or season greetings or whatever (e.g. Thank You for Your Order!, Merry Christmas!, etc.).', 'woocommerce-delivery-notes' ); ?>
 								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong>
@@ -169,10 +172,10 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 					</tr>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>policies_conditions"><?php _e( 'Returns Policy, Conditions, etc.:', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>policies_conditions"><?php _e( 'Returns Policy, Conditions, etc.:', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<textarea name="<?php echo $this->prefix; ?>policies_conditions" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'policies_conditions' ) ); ?></textarea>
+							<textarea name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>policies_conditions" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'policies_conditions' ) ); ?></textarea>
 							<span class="description">
 								<?php _e( 'Here you can add some more policies, conditions etc. For example add a returns policy in case the client would like to send back some goods. In some countries (e.g. in the European Union) this is required so please add any required info in accordance with the statutory regulations.', 'woocommerce-delivery-notes' ); ?>
 								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong> 
@@ -182,10 +185,10 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 					</tr>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>footer_imprint"><?php _e( 'Footer Imprint', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>footer_imprint"><?php _e( 'Footer Imprint', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<textarea name="<?php echo $this->prefix; ?>footer_imprint" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( $this->prefix . 'footer_imprint' ) ); ?></textarea>
+							<textarea name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>footer_imprint" rows="5" class="large-text"><?php echo wp_kses_stripslashes( get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'footer_imprint' ) ); ?></textarea>
 							<span class="description">
 								<?php _e( 'Add some further footer imprint, copyright notes etc. to get the printed sheets a bit more branded to your needs.', 'woocommerce-delivery-notes' ); ?>
 								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong> 
@@ -193,48 +196,53 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 							</span>
 						</td>
 					</tr>
+				</tbody>
+			</table>
+			<h3><?php _e( 'Preview Options', 'woocommerce-delivery-notes' ); ?></h3>
+			<table class="form-table">
+				<tbody>	
 					<tr>
 						<th>
-							<?php _e( 'Preview', 'woocommerce-delivery-notes' ); ?>
+							<?php _e( 'Preview opens', 'woocommerce-delivery-notes' ); ?>
 						</th>
 						<td>
-							<input name="<?php echo $this->prefix; ?>open_print_window" type="hidden" value="no" />
-							<label for="<?php echo $this->prefix; ?>open_print_window"><input name="<?php echo $this->prefix; ?>open_print_window" type="checkbox" value="yes" <?php checked( get_option( $this->prefix . 'open_print_window' ), 'yes' );?> /> <?php _e( 'Start printing when the preview page opens', 'woocommerce-delivery-notes' ); ?></label>
+							<input name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>open_print_window" type="hidden" value="no" />
+							<label for="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>open_print_window"><input name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>open_print_window" type="checkbox" value="yes" <?php checked( get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'open_print_window' ), 'yes' );?> /> <?php _e( 'Start printing when the preview page opens', 'woocommerce-delivery-notes' ); ?></label>
 						</td>
 					</tr>
 				</tbody>
 			</table>
-			<h3><?php _e( 'Order Number Options', 'woocommerce-delivery-notes' ); ?></h3>
+			<h3><?php _e( 'Order Numbering Options', 'woocommerce-delivery-notes' ); ?></h3>
 			<table class="form-table">
 				<tbody>		
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>before_order_number"><?php _e( 'Text before', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>before_order_number"><?php _e( 'Before order number', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<input name="<?php echo $this->prefix; ?>before_order_number" type="text" value="<?php echo wp_kses_stripslashes( get_option( $this->prefix . 'before_order_number' ) ); ?>" />
+							<input name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>before_order_number" type="text" value="<?php echo wp_kses_stripslashes( get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'before_order_number' ) ); ?>" />
 							<span class="description"><?php _e('This text will be placed before the order number ie. "YOUR-TEXT123".'); ?></span>
 						</td>
 					</tr>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>after_order_number"><?php _e( 'Text after', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>after_order_number"><?php _e( 'After order number', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<input name="<?php echo $this->prefix; ?>after_order_number" type="text" value="<?php echo wp_kses_stripslashes( get_option( $this->prefix . 'after_order_number' ) ); ?>" />
+							<input name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>after_order_number" type="text" value="<?php echo wp_kses_stripslashes( get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'after_order_number' ) ); ?>" />
 							<span class="description"><?php _e('This text will be placed after the order number ie. "123YOUR-TEXT".'); ?></span>
 						</td>
 					</tr>
 					<tr>
 						<th>
-							<label for="<?php echo $this->prefix; ?>order_number_offset"><?php _e( 'Offset', 'woocommerce-delivery-notes' ); ?></label>
+							<label for="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>order_number_offset"><?php _e( 'Number Offset', 'woocommerce-delivery-notes' ); ?></label>
 						</th>
 						<td>
-							<?php $value = intval( get_option( $this->prefix . 'order_number_offset' ) ); ?>
-							<input name="<?php echo $this->prefix; ?>order_number_offset" type="text" value="<?php echo (is_int($value) ? wp_kses_stripslashes( $value ) : ''); ?>" />
-							<span class="description"><?php _e('This adds an offset to the WooCommerce order numbering. Helpful for a contiguous numbering.'); ?>
+							<?php $value = intval( get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'order_number_offset' ) ); ?>
+							<input name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>order_number_offset" type="text" value="<?php echo (is_int($value) ? wp_kses_stripslashes( $value ) : ''); ?>" />
+							<span class="description"><?php _e('This adds an offset to the WooCommerce order number. Helpful for a contiguous numbering.'); ?>
 							<strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong> 
-							<?php _e('Only numbers are allowed.', 'woocommerce-delivery-notes' ); ?></span>
+							<?php _e('Only positive or negative numbers are allowed.', 'woocommerce-delivery-notes' ); ?></span>
 						</td>
 					</tr>
 				</tbody>
@@ -253,7 +261,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 		public function save_settings_page() {
 			if ( isset( $_POST[ $this->hidden_submit ] ) && $_POST[ $this->hidden_submit ] == 'submitted' ) {
 				foreach ( $_POST as $key => $value ) {
-					if($key != $this->hidden_submit && strpos($key, $this->prefix) !== false ) {
+					if($key != $this->hidden_submit && strpos($key, WooCommerce_Delivery_Notes::$plugin_prefix) !== false ) {
 						if( empty( $value ) ) {
 							delete_option( $key );
 						} else {

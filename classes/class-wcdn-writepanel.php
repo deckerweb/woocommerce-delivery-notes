@@ -7,7 +7,7 @@
  */
 if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 
-	class WooCommerce_Delivery_Notes_Writepanel extends WooCommerce_Delivery_Notes_Base {
+	class WooCommerce_Delivery_Notes_Writepanel {
 
 		/**
 		 * Constructor
@@ -15,11 +15,15 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 		 * @since 1.0
 		 */
 		public function __construct() {
-			parent::__construct();
-
-			if ( $this->is_woocommerce_activated() ) {
-				add_action( 'admin_init', array( $this, 'load_hooks' ) );
-			}
+		}
+		
+		/**
+		 * Load the class
+		 *
+		 * @since 1.0
+		 */
+		public function load() {
+			add_action( 'admin_init', array( $this, 'load_hooks' ) );
 		}
 
 		/**
@@ -42,7 +46,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 			global $post_type;
 			
 			if($post_type == 'shop_order') {
-				wp_enqueue_style('delivery-notes-styles', $this->plugin_url . 'css/style.css');
+				wp_enqueue_style('delivery-notes-styles', WooCommerce_Delivery_Notes::$plugin_url . 'css/style.css');
 			}
 		}
 		
@@ -56,7 +60,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 				return $links;
 			}
 		
-			if ( $file == $this->plugin_basefile ) {
+			if ( $file == WooCommerce_Delivery_Notes::$plugin_basefile ) {
 				$links[] = '<a href="http://wordpress.org/extend/plugins/woocommerce-delivery-notes/faq/" target="_new" title="' . __( 'FAQ', 'woocommerce-delivery-notes' ) . '">' . __( 'FAQ', 'woocommerce-delivery-notes' ) . '</a>';
 				$links[] = '<a href="http://wordpress.org/tags/woocommerce-delivery-notes?forum_id=10" target="_new" title="' . __( 'Support', 'woocommerce-delivery-notes' ) . '">' . __( 'Support', 'woocommerce-delivery-notes' ) . '</a>';
 				$links[] = '<a href="' . __( 'http://genesisthemes.de/en/donate/', 'woocommerce-delivery-notes' ) . '" target="_new" title="' . __( 'Donate', 'woocommerce-delivery-notes' ) . '">' . __( 'Donate', 'woocommerce-delivery-notes' ) . '</a>';
@@ -84,8 +88,8 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 
 			?>
 			<ul class="woocommerce-delivery-notes-actions">
-				<li><a href="<?php echo $this->plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>&name=invoice" id="woocommerce-delivery-notes-print-invoice" class="button button" target="_blank"><?php _e( 'Print Invoice', 'woocommerce-delivery-notes' ); ?></a></li>
-				<li><a href="<?php echo $this->plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>&name=delivery-note" id="woocommerce-delivery-notes-print-delivery-note" class="button button" target="_blank"><?php _e( 'Print Delivery Note', 'woocommerce-delivery-notes' ); ?></a></li>
+				<li><a href="<?php echo WooCommerce_Delivery_Notes::$plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>&name=invoice" id="woocommerce-delivery-notes-print-invoice" class="button button" target="_blank"><?php _e( 'Print Invoice', 'woocommerce-delivery-notes' ); ?></a></li>
+				<li><a href="<?php echo WooCommerce_Delivery_Notes::$plugin_url; ?>woocommerce-delivery-notes-print.php?order=<?php echo $post_id; ?>&name=delivery-note" id="woocommerce-delivery-notes-print-delivery-note" class="button button" target="_blank"><?php _e( 'Print Delivery Note', 'woocommerce-delivery-notes' ); ?></a></li>
 			</ul>
 			<?php
 		}
