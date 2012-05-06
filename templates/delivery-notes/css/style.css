@@ -164,13 +164,13 @@ th {
 }
 
 /* Special Margin & Overflow Stylings */
+#letter-header,
 #order-items,
 #order-summary,
 #order-notes {
 	margin-bottom: 3em;
 }
 
-#letter-header,
 #order-info,
 #order-summary {
 	margin-bottom: 6em;
@@ -279,10 +279,19 @@ font-weight: bold;
 /* Footer Imprint */
 #letter-footer {
 	border-top: 1px solid #ccc;
-	padding-top: 1.25em;
+	padding-top: 1em;
 	color: #666;
 	font-size: 0.75em;
 	font-style: italic;
+}
+
+#letter-footer p + p {
+	margin-top: 1em;
+}
+
+#letter-footer .policies,
+#letter-footer .imprint {
+	margin-bottom: 1em;
 }
 
 
