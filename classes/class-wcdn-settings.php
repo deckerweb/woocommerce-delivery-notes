@@ -138,9 +138,22 @@ if ( ! class_exists( 'WooCommerce_Delivery_Notes_Settings' ) ) {
 						<td>
 							<textarea name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>custom_company_name" rows="2" class="large-text"><?php echo wp_kses_stripslashes( get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'custom_company_name' ) ); ?></textarea>
 							<span class="description">
-								<?php _e( 'Your custom company or shop name for the Delivery Note.', 'woocommerce-delivery-notes' ); ?>
+								<?php _e( 'Your company/shop name for the Delivery Note.', 'woocommerce-delivery-notes' ); ?>
 								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong>
 								<?php _e( 'Leave blank to use the default Website/ Blog title defined in WordPress settings.', 'woocommerce-delivery-notes' ); ?>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label for="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>company_logo"><?php _e( 'Company/Shop Logo', 'woocommerce-delivery-notes' ); ?></label>
+						</th>
+						<td>
+							<input type="text" name="<?php echo WooCommerce_Delivery_Notes::$plugin_prefix; ?>company_logo" rows="2" class="regular-text" value="<?php echo get_option( WooCommerce_Delivery_Notes::$plugin_prefix . 'company_logo' ); ?>" />
+							<span class="description">
+								<?php _e( 'A company/shop logo representing your business.', 'woocommerce-delivery-notes' ); ?>
+								<br /><strong><?php _e( 'Note:', 'woocommerce-delivery-notes' ); ?></strong>
+								<?php _e( 'The Logo will be resized when it is bigger than 320px &times; 320px.', 'woocommerce-delivery-notes' ); ?>
 							</span>
 						</td>
 					</tr>

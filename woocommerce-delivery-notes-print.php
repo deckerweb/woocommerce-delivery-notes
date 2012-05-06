@@ -93,6 +93,18 @@ if ( !function_exists( 'wcdn_template_print_button' ) ) {
 }
 	
 /**
+ * Return default logo 
+ *
+ * @since 1.0
+ */
+if ( !function_exists( 'wcdn_company_logo' ) ) {
+	function wcdn_company_logo() {
+		global $wcdn;
+		return $wcdn->print->get_setting( 'company_logo' );
+	}
+}
+
+/**
  * Return default title name of Delivery Note 
  *
  * @since 1.0
@@ -102,7 +114,7 @@ if ( !function_exists( 'wcdn_company_name' ) ) {
 		global $wcdn;
 		$name = trim( $wcdn->print->get_setting( 'custom_company_name' ) );
 		if( !empty( $name ) ) {
-			return wpautop( $name );
+			return wpautop( wptexturize( $name ) , 0);
 		} else {
 			return get_bloginfo( 'name' );
 		}

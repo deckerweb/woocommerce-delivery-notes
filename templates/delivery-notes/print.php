@@ -18,9 +18,9 @@
 		<div id="content">			
 			<div id="page">
 				<div id="letter-header">
-					<h3 class="heading"><?php if( wcdn_template_name() == 'invoice' ) : ?><?php _e( 'Invoice', 'woocommerce-delivery-notes' ); ?><?php else : ?><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?><?php endif; ?></h3>
+					<h3 class="heading"><?php if( !wcdn_company_logo() ) : ?><?php if( wcdn_template_name() == 'invoice' ) : ?><?php _e( 'Invoice', 'woocommerce-delivery-notes' ); ?><?php else : ?><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?><?php endif; ?><?php endif; ?></h3>
 					<div class="company-info">
-						<h1><?php echo wcdn_company_name(); ?></h1>
+						<div class="company-name"><?php echo wcdn_company_name(); ?></div>
 						<div class="company-address"><?php echo wcdn_company_info(); ?></div>
 					</div>
 				</div><!-- #letter-header -->
@@ -40,6 +40,11 @@
 				</div><!-- #order-listing -->
 				
 				<ul id="order-info">
+					<?php if( wcdn_company_logo() ) : ?>
+					<li>
+						<h3 class="order-number-label"><?php if( wcdn_template_name() == 'invoice' ) : ?><?php _e( 'Invoice', 'woocommerce-delivery-notes' ); ?><?php else : ?><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?><?php endif; ?></h3>
+					</li>
+					<?php endif; ?>
 					<li>
 						<h3 class="order-number-label"><?php _e( 'Order No.', 'woocommerce-delivery-notes' ); ?></h3>
 						<span class="order-number"><?php echo wcdn_order_number(); ?></span>
@@ -125,9 +130,6 @@
 		</div><!-- #content -->
 		
 		<div id="footer">
-			<div class="options">
-				<a href="#print" onclick="javascript:openPrintWindow();return false;"><?php _e( 'Print Page', 'woocommerce-delivery-notes' ); ?></a>
-			</div><!-- .options -->
 		</div><!-- #footer -->
 	</div><!-- #container -->
 </body>
