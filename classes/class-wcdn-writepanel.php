@@ -45,8 +45,8 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 		public function print_styles() {
 			global $post_type;
 			
-			if($post_type == 'shop_order') {
-				wp_enqueue_style('delivery-notes-styles', WooCommerce_Delivery_Notes::$plugin_url . 'css/style.css');
+			if ( $post_type == 'shop_order' ) {
+				wp_enqueue_style( 'delivery-notes-styles', WooCommerce_Delivery_Notes::$plugin_url . 'css/style.css' );
 			}
 		}
 		
@@ -96,6 +96,4 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes_Writepanel' ) ) {
 		
 	}
 	
-} 
-
-?>
+}

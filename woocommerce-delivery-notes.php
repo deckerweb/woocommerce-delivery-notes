@@ -1,39 +1,45 @@
 <?php
 /**
- * Print the order invoices and delivery notes of the WooCommerce shop plugin. You can add company/shop info as well as personal notes and policies to the print page.
+ * Main plugin file.
+ * Print order invoices & delivery notes for WooCommerce shop plugin.
+ * You can add company/shop info as well as personal notes & policies to print pages.
  *
- * @package   WooCommerce - Print Invoices & Delivery Notes
- * @link      http://twitter.com/#!/deckerweb
- * @copyright Copyright 2011 Steve Clark, Trigvvy Gunderson, David Decker - DECKERWEB
+ * @package   WooCommerce Print Invoices & Delivery Notes
+ * @copyright Copyright 2011-2012 Steve Clark, Trigvvy Gunderson, David Decker - DECKERWEB
  *
- * @credits Inspired and based on the plugin "Jigoshop Delivery Notes" by Steve Clark and Trigvvy Gunderson
- * @link http://www.clark-studios.co.uk/blog/
- * @link https://github.com/piffpaffpuff
+ * @credits   Inspired and based on the plugin "Jigoshop Delivery Notes" by Steve Clark and Trigvvy Gunderson
+ * @link      http://www.clark-studios.co.uk/blog/
+ * @link      https://github.com/piffpaffpuff
  *
- * Plugin Name: WooCommerce - Print Invoices & Delivery Notes
- * Plugin URI: http://genesisthemes.de/en/wp-plugins/woocommerce-delivery-notes/
- * Description: Print order invoices and delivery notes for the WooCommerce shop plugin. You can add company/shop info as well as personal notes and policies to the print page.
- * Version: 1.1
+ * Plugin Name: WooCommerce Print Invoices & Delivery Notes
+ * Plugin URI: https://github.com/deckerweb/woocommerce-delivery-notes
+ * Description: Print order invoices & delivery notes for WooCommerce shop plugin. You can add company/shop info as well as personal notes & policies to print pages.
+ * Version: 1.2
  * Author: Steve Clark, Triggvy Gunderson, David Decker
- * Author URI: http://deckerweb.de/
- * License: GPLv3
+ * Author URI: https://github.com/deckerweb/woocommerce-delivery-notes
+ * License: GPLv3 or later
+ * License URI: http://www.opensource.org/licenses/gpl-license.php
  * Text Domain: woocommerce-delivery-notes
  * Domain Path: /languages/
  *
  * Copyright 2011-2012 Steve Clark, Trigvvy Gunderson, David Decker - DECKERWEB
-		
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *		
+ *     This file is part of WooCommerce Print Invoices & Delivery Notes,
+ *     a plugin for WordPress.
+ *
+ *     WooCommerce Print Invoices & Delivery Notes is free software:
+ *     You can redistribute it and/or modify it under the terms of the
+ *     GNU General Public License as published by the Free Software
+ *     Foundation, either version 2 of the License, or (at your option)
+ *     any later version.
+ *
+ *     WooCommerce Print Invoices & Delivery Notes is distributed in the hope that
+ *     it will be useful, but WITHOUT ANY WARRANTY; without even the
+ *     implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ *     PURPOSE. See the GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with WordPress. If not, see <http://www.gnu.org/licenses/>.
  */
 
 /**
@@ -41,7 +47,7 @@
  *
  * @since 1.0
  */
-if ( !class_exists( 'WooCommerce_Delivery_Notes' ) ) {
+if ( ! class_exists( 'WooCommerce_Delivery_Notes' ) ) {
 
 	class WooCommerce_Delivery_Notes {
 	
@@ -101,6 +107,7 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes' ) ) {
 				$this->print = new WooCommerce_Delivery_Notes_Print();
 				$this->print->load();
 					
+				load_plugin_textdomain( 'woocommerce-delivery-notes', false, dirname( self::$plugin_basefile ) . '/../../languages/woocommerce-delivery-notes/' );
 				load_plugin_textdomain( 'woocommerce-delivery-notes', false, dirname( self::$plugin_basefile ) . '/languages' );
 			}
 		}
@@ -128,5 +135,3 @@ if ( !class_exists( 'WooCommerce_Delivery_Notes' ) ) {
  */
 $wcdn = new WooCommerce_Delivery_Notes();
 $wcdn->load();
-
-?>

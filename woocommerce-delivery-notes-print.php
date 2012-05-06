@@ -100,7 +100,7 @@ if ( !function_exists( 'wcdn_template_print_button' ) ) {
 if ( !function_exists( 'wcdn_company_name' ) ) {
 	function wcdn_company_name() {
 		global $wcdn;
-		$name = trim($wcdn->print->get_setting( 'custom_company_name' ));
+		$name = trim( $wcdn->print->get_setting( 'custom_company_name' ) );
 		if( !empty( $name ) ) {
 			return wpautop( $name );
 		} else {
@@ -117,7 +117,7 @@ if ( !function_exists( 'wcdn_company_name' ) ) {
  * @global $wcdn->print
  * @return string company address
  */
-if (!function_exists( 'wcdn_company_info' ) ) {
+if ( ! function_exists( 'wcdn_company_info' ) ) {
 	function wcdn_company_info() {
 		global $wcdn;
 		return wpautop( wptexturize( $wcdn->print->get_setting( 'company_address' ) ) );
@@ -132,7 +132,7 @@ if (!function_exists( 'wcdn_company_info' ) ) {
  * @global $wcdn->print
  * @return string shipping name
  */
-if ( !function_exists( 'wcdn_shipping_name' ) ) {
+if ( ! function_exists( 'wcdn_shipping_name' ) ) {
 	function wcdn_shipping_name() {
 		global $wcdn;
 		return $wcdn->print->get_order()->shipping_first_name . ' ' . $wcdn->print->get_order()->shipping_last_name;
@@ -147,7 +147,7 @@ if ( !function_exists( 'wcdn_shipping_name' ) ) {
  * @global $wcdn->print
  * @return string shipping company
  */
-if ( !function_exists( 'wcdn_shipping_company' ) ) {
+if ( ! function_exists( 'wcdn_shipping_company' ) ) {
 	function wcdn_shipping_company() {
 		global $wcdn;
 		return $wcdn->print->get_order()->shipping_company;
@@ -162,7 +162,7 @@ if ( !function_exists( 'wcdn_shipping_company' ) ) {
  * @global $wcdn->print
  * @return string shipping address
  */
-if ( !function_exists( 'wcdn_shipping_address_1' ) ) {
+if ( ! function_exists( 'wcdn_shipping_address_1' ) ) {
 	function wcdn_shipping_address_1() {
 		global $wcdn;
 		return $wcdn->print->get_order()->shipping_address_1;
@@ -177,7 +177,7 @@ if ( !function_exists( 'wcdn_shipping_address_1' ) ) {
  * @global $wcdn->print
  * @return string shipping address 2
  */
-if ( !function_exists( 'wcdn_shipping_address_2' ) ) {
+if ( ! function_exists( 'wcdn_shipping_address_2' ) ) {
 	function wcdn_shipping_address_2() {
 		global $wcdn;
 		return $wcdn->print->get_order()->shipping_address_2;
@@ -192,7 +192,7 @@ if ( !function_exists( 'wcdn_shipping_address_2' ) ) {
  * @global $wcdn->print
  * @return string shipping city
  */
-if ( !function_exists( 'wcdn_shipping_city' ) ) {
+if ( ! function_exists( 'wcdn_shipping_city' ) ) {
 	function wcdn_shipping_city() {
 		global $wcdn;
 		return $wcdn->print->get_order()->shipping_city;
@@ -207,7 +207,7 @@ if ( !function_exists( 'wcdn_shipping_city' ) ) {
  * @global $wcdn->print
  * @return string shipping state
  */
-if ( !function_exists( 'wcdn_shipping_state' ) ) {
+if ( ! function_exists( 'wcdn_shipping_state' ) ) {
 	function wcdn_shipping_state() {
 		global $wcdn;
 		return $wcdn->print->get_order()->shipping_state;
@@ -222,7 +222,7 @@ if ( !function_exists( 'wcdn_shipping_state' ) ) {
  * @global $wcdn->print
  * @return string shipping postcode
  */
-if ( !function_exists( 'wcdn_shipping_postcode' ) ) {
+if ( ! function_exists( 'wcdn_shipping_postcode' ) ) {
 	function wcdn_shipping_postcode() {
 		global $wcdn;
 		return $wcdn->print->get_order()->shipping_postcode;
@@ -237,11 +237,11 @@ if ( !function_exists( 'wcdn_shipping_postcode' ) ) {
  * @global $wcdn->print
  * @return string shipping country
  */
-if ( !function_exists( 'wcdn_shipping_country' ) ) {
+if ( ! function_exists( 'wcdn_shipping_country' ) ) {
 	function wcdn_shipping_country() {
 		global $wcdn, $woocommerce;
 		$country = $wcdn->print->get_order()->shipping_country;
-		$full_country = (isset($woocommerce->countries->countries[$country])) ? $woocommerce->countries->countries[$country] : $country;
+		$full_country = ( isset( $woocommerce->countries->countries[$country] ) ) ? $woocommerce->countries->countries[$country] : $country;
 		return $full_country;
 	}
 }
@@ -254,7 +254,7 @@ if ( !function_exists( 'wcdn_shipping_country' ) ) {
  * @global $wcdn->print
  * @return string shipping notes
  */
-if ( !function_exists( 'wcdn_shipping_notes' ) ) {
+if ( ! function_exists( 'wcdn_shipping_notes' ) ) {
 	function wcdn_shipping_notes() {
 		global $wcdn;
 		return wpautop( wptexturize( $wcdn->print->get_order()->customer_note ) );
@@ -269,12 +269,12 @@ if ( !function_exists( 'wcdn_shipping_notes' ) ) {
  * @global $wcdn->print
  * @return string order id
  */
-if ( !function_exists( 'wcdn_order_number' ) ) {
+if ( ! function_exists( 'wcdn_order_number' ) ) {
 	function wcdn_order_number() {
 		global $wcdn;
-		$before = trim($wcdn->print->get_setting( 'before_order_number' ));
-		$after = trim($wcdn->print->get_setting( 'after_order_number' ));
-		$offset = trim($wcdn->print->get_setting( 'order_number_offset' ));
+		$before = trim( $wcdn->print->get_setting( 'before_order_number' ) );
+		$after = trim( $wcdn->print->get_setting( 'after_order_number' ) );
+		$offset = trim( $wcdn->print->get_setting( 'order_number_offset' ) );
 		$number = $before . ( intval( $offset ) + intval( $wcdn->print->order_id ) ) . $after;
 		return $number;
 	}
@@ -288,7 +288,7 @@ if ( !function_exists( 'wcdn_order_number' ) ) {
  * @global $wcdn->print
  * @return string order date
  */
-if ( !function_exists( 'wcdn_order_date')) {
+if ( ! function_exists( 'wcdn_order_date' ) ) {
 	function wcdn_order_date() {
 		global $wcdn;
 		$order = $wcdn->print->get_order();
@@ -304,7 +304,7 @@ if ( !function_exists( 'wcdn_order_date')) {
  * @global $wcdn->print
  * @return strings order items
  */
-if ( !function_exists( 'wcdn_get_order_items' ) ) {
+if ( ! function_exists( 'wcdn_get_order_items' ) ) {
 	function wcdn_get_order_items() {
 		global $wcdn;
 		return $wcdn->print->get_order_items();
@@ -349,7 +349,7 @@ if ( !function_exists( 'wcdn_order_subtotal' ) ) {
  * @global $wcdn->print
  * @return string order tax
  */
-if ( !function_exists( 'wcdn_order_tax' ) ) {
+if ( ! function_exists( 'wcdn_order_tax' ) ) {
 	function wcdn_order_tax() {
 		global $wcdn;
 		return woocommerce_price( $wcdn->print->get_order()->get_total_tax() );
@@ -364,7 +364,7 @@ if ( !function_exists( 'wcdn_order_tax' ) ) {
  * @global $wcdn->print
  * @return string order shipping cost
  */
-if ( !function_exists( 'wcdn_order_shipping' ) ) {
+if ( ! function_exists( 'wcdn_order_shipping' ) ) {
 	function wcdn_order_shipping() {
 		global $wcdn;
 		return $wcdn->print->get_order()->get_shipping_to_display();
@@ -379,7 +379,7 @@ if ( !function_exists( 'wcdn_order_shipping' ) ) {
  * @global $wcdn->print
  * @return string order discount
  */
-if ( !function_exists( 'wcdn_order_discount' ) ) {
+if ( ! function_exists( 'wcdn_order_discount' ) ) {
 	function wcdn_order_discount() {
 		global $wcdn;
 		return woocommerce_price( $wcdn->print->get_order()->order_discount );
@@ -394,7 +394,7 @@ if ( !function_exists( 'wcdn_order_discount' ) ) {
  * @global $wcdn->print
  * @return string grand total
  */
-if ( !function_exists( 'wcdn_order_total' ) ) {
+if ( ! function_exists( 'wcdn_order_total' ) ) {
 	function wcdn_order_total() {
 		global $wcdn;
 		return woocommerce_price( $wcdn->print->get_order()->order_total );
@@ -409,7 +409,7 @@ if ( !function_exists( 'wcdn_order_total' ) ) {
  * @global $wcdn->print
  * @return boolean
  */
-if ( !function_exists( 'wcdn_has_shipping' ) ) {
+if ( ! function_exists( 'wcdn_has_shipping' ) ) {
 	function wcdn_has_shipping() {
 		global $wcdn;
 		return ( $wcdn->print->get_order()->order_shipping > 0 ) ? true : false;
@@ -424,10 +424,10 @@ if ( !function_exists( 'wcdn_has_shipping' ) ) {
  * @global $wcdn->print
  * @return boolean
  */
-if ( !function_exists( 'wcdn_has_tax' ) ) {
+if ( ! function_exists( 'wcdn_has_tax' ) ) {
 	function wcdn_has_tax() {
 		global $wcdn;
-		return ( $wcdn->print->get_order()->get_total_tax() > 0) ? true : false;
+		return ( $wcdn->print->get_order()->get_total_tax() > 0 ) ? true : false;
 	}
 }
 
@@ -439,7 +439,7 @@ if ( !function_exists( 'wcdn_has_tax' ) ) {
  * @global $wcdn->print
  * @return boolean
  */
-if ( !function_exists( 'wcdn_has_discount' ) ) {
+if ( ! function_exists( 'wcdn_has_discount' ) ) {
 	function wcdn_has_discount() {
 		global $wcdn;
 		return ( $wcdn->print->get_order()->order_discount > 0 ) ? true : false;
@@ -454,7 +454,7 @@ if ( !function_exists( 'wcdn_has_discount' ) ) {
  * @global $wcdn->print
  * @return string personal notes
  */
-if ( !function_exists( 'wcdn_personal_notes' ) ) {
+if ( ! function_exists( 'wcdn_personal_notes' ) ) {
 	function wcdn_personal_notes() {
 		global $wcdn;
 		return wpautop( wptexturize( $wcdn->print->get_setting( 'personal_notes' ) ) );
@@ -469,7 +469,7 @@ if ( !function_exists( 'wcdn_personal_notes' ) ) {
  * @global $wcdn->print
  * @return string policy
  */
-if ( !function_exists( 'wcdn_policies_conditions' ) ) {
+if ( ! function_exists( 'wcdn_policies_conditions' ) ) {
 	function wcdn_policies_conditions() {
 		global $wcdn;
 		return wpautop( wptexturize( $wcdn->print->get_setting( 'policies_conditions' ) ) );
@@ -484,7 +484,7 @@ if ( !function_exists( 'wcdn_policies_conditions' ) ) {
  * @global $wcdn->print
  * @return string footer imprint
  */
-if ( !function_exists( 'wcdn_footer_imprint' ) ) {
+if ( ! function_exists( 'wcdn_footer_imprint' ) ) {
 	function wcdn_footer_imprint() {
 		global $wcdn;
 		return wpautop( wptexturize( $wcdn->print->get_setting( 'footer_imprint' ) ) );
@@ -500,5 +500,3 @@ if ( !function_exists( 'wcdn_footer_imprint' ) ) {
  * @return string footer imprint
  */
 echo $wcdn->print->get_print_page( $name );
-
-?>
