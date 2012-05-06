@@ -96,6 +96,8 @@ The basic intention is to have the plugin at the same time as leightweight and u
 = 1.1.2 =
 * Basic invoice template support
 * Custom order number
+* New cleaner looking print template
+* Code improvements
 
 = 1.1.1 =
 * Restructured classes
