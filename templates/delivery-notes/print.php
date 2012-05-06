@@ -11,22 +11,24 @@
 	<div id="container">
 		<div id="header">
 			<div class="options">
-				<a href="#print" onclick="javascript:openPrintWindow();return false;"><?php _e( 'Print Page', 'woocommerce-delivery-notes' ); ?></a>
+				<?php echo wcdn_template_print_button(); ?>
 			</div><!-- .options -->
 		</div><!-- #header -->
 
 		<div id="content">			
 			<div id="page">
 				<div id="letter-header">
-					<div class="heading"><?php if( wcdn_template_name() == 'invoice' ) : ?><?php _e( 'Invoice', 'woocommerce-delivery-notes' ); ?><?php else : ?><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?><?php endif; ?></div>
-					<div class="company-name"><?php echo wcdn_company_name(); ?></div>
-					<div class="company-info"><?php echo wcdn_company_info(); ?></div>
+					<h3 class="heading"><?php if( wcdn_template_name() == 'invoice' ) : ?><?php _e( 'Invoice', 'woocommerce-delivery-notes' ); ?><?php else : ?><?php _e( 'Delivery Note', 'woocommerce-delivery-notes' ); ?><?php endif; ?></h3>
+					<div class="company-info">
+						<h1><?php echo wcdn_company_name(); ?></h1>
+						<div class="company-address"><?php echo wcdn_company_info(); ?></div>
+					</div>
 				</div><!-- #letter-header -->
 				
 				<div id="order-listing">
-					<h3><?php _e( 'Recipient:', 'woocommerce-delivery-notes' ); ?></h3>
+					<h3><?php _e( 'Recipient', 'woocommerce-delivery-notes' ); ?></h3>
 					<div class="shipping-info">
-						<br /><?php if( wcdn_shipping_company() ) : ?><?php echo wcdn_shipping_company(); ?><br /><?php endif; ?>
+						<?php if( wcdn_shipping_company() ) : ?><?php echo wcdn_shipping_company(); ?><br /><?php endif; ?>
 						<?php echo wcdn_shipping_name(); ?><br />
 						<?php echo wcdn_shipping_address_1(); ?><br />
 						<?php if( wcdn_shipping_address_2() ) : ?><?php echo wcdn_shipping_address_2(); ?><br /><?php endif; ?>
@@ -35,21 +37,19 @@
 
 						<?php if( wcdn_shipping_country() ) : ?><br /><?php echo wcdn_shipping_country(); ?><?php endif; ?>
 					</div><!-- .shipping-info -->
-					
-					<table id="order-info">
-						<tbody>
-							<tr>
-								<th class="order-number-label"><?php _e( 'Order No.', 'woocommerce-delivery-notes' ); ?></th>
-								<td class="order-number"><?php echo wcdn_order_number(); ?></td>
-							</tr>
-							<tr>
-								<th class="order-date-label"><?php _e( 'Order Date', 'woocommerce-delivery-notes' ); ?></th>
-								<td class="order-date"><?php echo wcdn_order_date(); ?></td>
-							</tr>
-						</tbody>
-					</table><!-- #order-info -->
 				</div><!-- #order-listing -->
 				
+				<ul id="order-info">
+					<li>
+						<h3 class="order-number-label"><?php _e( 'Order No.', 'woocommerce-delivery-notes' ); ?></h3>
+						<span class="order-number"><?php echo wcdn_order_number(); ?></span>
+					</li>
+					<li>
+						<h3 class="order-date-label"><?php _e( 'Order Date', 'woocommerce-delivery-notes' ); ?></h3>
+						<span class="order-date"><?php echo wcdn_order_date(); ?></span>
+					</li>
+				</ul><!-- #order-info -->
+					
 				<div id="order-items">
 					<table>
 						<thead>
@@ -106,20 +106,21 @@
 				</div><!-- #order-summery -->
 	
 				<div id="order-notes">
+					<div class="notes-shipping">
+						<?php if ( wcdn_shipping_notes() ) : ?>
+							<h3><?php _e( 'Customer Notes', 'woocommerce-delivery-notes' ); ?></h3>
+							<?php echo wcdn_shipping_notes(); ?>
+						<?php endif; ?>
+					</div>
 					<div class="notes-personal"><?php echo wcdn_personal_notes(); ?></div>
-					<div class="notes-shipping"><?php
-						if ( wcdn_shipping_notes() ) {
-							echo '<h3>' . __( 'Customer Notes:', 'woocommerce-delivery-notes' ) . '</h3>';
-							echo '<br />';
-						}
-
-						echo wcdn_shipping_notes(); ?></div>
-					<div class="notes-policies"><?php echo wcdn_policies_conditions(); ?></div>
 				</div><!-- #order-notes -->
-
-				<div id="letter-footer">
-					<div class="imprint"><?php echo wcdn_footer_imprint(); ?></div>
-				</div><!-- #letter-footer -->
+					
+				<?php if ( wcdn_policies_conditions() || wcdn_footer_imprint() ) : ?>
+					<div id="letter-footer">
+						<div class="policies"><?php echo wcdn_policies_conditions(); ?></div>
+						<div class="imprint"><?php echo wcdn_footer_imprint(); ?></div>
+					</div><!-- #letter-footer -->
+				<?php endif; ?>
 			</div><!-- #page -->
 		</div><!-- #content -->
 		

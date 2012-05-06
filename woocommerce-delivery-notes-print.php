@@ -78,6 +78,19 @@ if ( !function_exists( 'wcdn_template_javascript' ) ) {
 		return $js;
 	}
 }
+
+/**
+ * Return print button
+ *
+ * @since 1.0
+ */
+if ( !function_exists( 'wcdn_template_print_button' ) ) {
+	function wcdn_template_print_button() {
+		?>
+		<a href="#print" onclick="javascript:openPrintWindow();return false;"><?php _e( 'Print Page', 'woocommerce-delivery-notes' ); ?></a>
+		<?php
+	}
+}
 	
 /**
  * Return default title name of Delivery Note 
@@ -89,7 +102,7 @@ if ( !function_exists( 'wcdn_company_name' ) ) {
 		global $wcdn;
 		$name = trim($wcdn->print->get_setting( 'custom_company_name' ));
 		if( !empty( $name ) ) {
-			return wpautop( wp_kses_stripslashes( $name ) );
+			return wpautop( $name );
 		} else {
 			return get_bloginfo( 'name' );
 		}
@@ -263,7 +276,7 @@ if ( !function_exists( 'wcdn_order_number' ) ) {
 		$after = trim($wcdn->print->get_setting( 'after_order_number' ));
 		$offset = trim($wcdn->print->get_setting( 'order_number_offset' ));
 		$number = $before . ( intval( $offset ) + intval( $wcdn->print->order_id ) ) . $after;
-		return wp_kses_stripslashes( $number );
+		return $number;
 	}
 }
 

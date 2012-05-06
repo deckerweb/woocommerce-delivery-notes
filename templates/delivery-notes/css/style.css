@@ -6,16 +6,10 @@
 
 */
 
-/* CSS Reset (Do not edit)
+/* CSS Reset and Print Button (Do not edit)
 ------------------------------------------*/
 
-/**
- * @link	http://meyerweb.com/eric/tools/css/reset/ 
- * @version	v2.0 | 20110126
- * @license	none (public domain)
- */
-
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, table {
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, table, ol, ul {
 	border: 0 none;
 	font: inherit;
 	margin: 0;
@@ -37,63 +31,21 @@ table {
 	border-spacing: 0;
 }
 
-
-/* Delivery Note Page Layout
-------------------------------------------*/
-
-/**
- * Edit all the following rules to your needs
- *
- * For having your custom template in your theme please see the FAQ section:
- * @link http://wordpress.org/extend/plugins/woocommerce-delivery-notes/faq/
- */
-
-/* Main Body */
-body {
-	background: #fff;
-	color: #000;
-	font-family: sans-serif;
-	font-size: .875em;
-	line-height: 125%;
-}
-
-p {
-	margin-bottom: 1.25em;
-}
-
-/* Basic Table Styling */
-td,
-th {
-	border: 1px #ccc solid;
-	padding: 3px 5px;
-	vertical-align: top;
-}
-
-th {
-	color: #000;
-	font-weight: 700;
-	text-align: left;
-}
-
 /* Main Sections of the Page */
 #container {
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 7%;
 	padding-left: 10%;
 	padding-right: 10%;
-	padding-top: 5%;
 	text-align: left;
 }
 
 #header,
 #footer {
 	overflow: hidden;
-	padding-bottom: 20px;
-	padding-top: 20px;
-}
-
-#footer {
-	margin-top: 40px;
+	margin-bottom: 2em;
+	margin-top: 2em;
 }
 
 /* Options link - "Print Page" */
@@ -106,7 +58,7 @@ th {
 	color: #000;
 	display: block;
 	float: right;
-	font-size: .90em;
+	font-size: 0.875em;
 	height: 22px;
 	line-height: 22px;
 	padding-left: 20px;
@@ -119,77 +71,109 @@ th {
 	border: 1px solid #666;
 }
 
+
+/* Template Page Layout
+------------------------------------------*/
+
+/**
+ * Edit all the following rules to your needs
+ */
+
+/* Main Body */
+body {
+	background: #fff;
+	color: #000;
+	font-family: "HelveticaNeue", Helvetica, Arial, sans-serif;
+	font-size: 0.875em;
+	line-height: 125%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: bold;
+	margin-bottom: 1.25em;
+}
+
+p, 
+li,
+ul {
+	margin-bottom: 1.25em;
+}
+
+/* Basic Table Styling */
+table {
+	border-top: 1px #ccc solid;
+}
+
+td,
+th {
+	border-left: 1px #ccc solid;
+	border-right: 1px #ccc solid;
+	border-bottom: 1px #ccc solid;
+	padding: 0.375em;
+	vertical-align: middle;
+}
+
+th {
+	color: #000;
+	font-weight: bold;
+	text-align: left;
+}
+
 /* Special Margin & Overflow Stylings */
 #letter-header,
 #order-items,
-#order-summary {
-	margin-bottom: 60px;
-}
-
-#order-info {
-	margin-bottom: 100px;
-}
-
-#letter-header,
-#order-info,
 #order-summary,
 #order-notes {
-	overflow: auto;
+	margin-bottom: 3em;
+}
+
+#order-info,
+#order-summary {
+	margin-bottom: 6em;
+}
+
+#page,
+#letter-header,
+#order-listing,
+#order-summary,
+#order-notes,
+#letter-footer {
+	overflow: hidden;
 }
 
 /* Delivery Notes Head */
 #letter-header .heading {
-	border-bottom: 1px solid #ccc;
-	border-top: 1px solid #ccc;
-	font-size: 1.1em;
-	font-weight: 700;
-	margin-bottom: 15px;
-	padding: 9px 0 6px;
-	text-align: center;
-	text-transform: uppercase;
-	width: 100%;
-}
-
-#letter-header div {
-	width: 400px;
-}
-
-#letter-header .company-name {
-	float: left;
-	font-size: 2.5em;
+	width: 50%;
+	margin-right: 15%;
+	font-weight: bold;
+	font-size: 2em;
 	line-height: 125%;
+	float: left;
 }
 
 #letter-header .company-info {
-	float: right;
-	text-align: right;
+	float: left;
+	margin-top: 0.45em;
 }
 
 /* Order Listing/Info - #order-listing */
-#order-listing h3 {
-	font-size: 1.1em;
-	font-weight: 700;
-}
-
-#order-listing .shipping-info {
+#order-listing {
+	width: 50%;
+	margin-right: 15%;
 	float: left;
-	margin-left: 20px;
-	width: 350px;
 }
 
-#order-listing table {
-	float: right;
-	width: 350px;
-}
-
-#order-listing th {
-	width: 165px;
+/* Order Info - #order-info */
+#order-info {
+	float: left;
 }
 
 /* Order Items - #order-items */
 #order-items {
 	clear: both;
-	margin-top: 20px;
 }
 
 #order-items table {
@@ -197,79 +181,62 @@ th {
 }
 
 #order-items .description {
-	width: 539px;
+	width: 65%;
 }
 
-#order-items .quantity {
-	width: 165px;
+#order-items .price {
+	width: 17.5%;
 }
 
 #order-items .sku,
 #order-items .weight {
 	color: #666;
-	font-size: 0.85em;
+	font-size: 0.75em;
 	font-style: italic;
-	margin-left: 15px;
 }
 
 /* Order Summary - #order-summary */
 #order-summary table {
 	float: right;
-	width: 350px;
+	width: 35%;
 }
 
-#order-summary th {
-	width: 165px;
+#order-summary .price {
+	width: 50%;
 }
 
 #order-summary #total-label,
 #order-summary #total-number {
 	border-top: 2px solid #000;
 	border-bottom: 2px solid #000;
-	padding-top: 7px;
+}
+
+#order-summary #total-number {
+	font-weight: bold;
 }
 
 
 /* Order Notes - #order-notes */
+
 #order-notes {
-	border-top: 1px solid #ccc;
-	margin-top: 60px;
-	padding-top: 10px;
 }
-
-#order-notes .notes-personal,
-#order-notes .notes-shipping,
-#order-notes .notes-policies {
-	margin-bottom: 20px;
-}
-
-#order-notes .notes-personal {
-	color: #666;
-	font-size: 1.2em;
-	font-style: italic;
-	padding: 10px 20px;
-}
-
-#order-notes .notes-shipping,
-#order-notes .notes-policies {
-	color: #444;
+#order-notes .notes-shipping {
 	float: left;
-	font-size: .95em;
-	line-height: 125%;
+	width: 50%;
+	margin-right: 15%;
+}
+#order-notes .notes-personal {
+	font-weight: bold;
+	float: left;
 }
 
 /* Footer Imprint */
 #letter-footer {
 	border-top: 1px solid #ccc;
-	padding: 10px 20px;
-}
-
-#letter-footer .imprint {
+	padding-top: 1.25em;
 	color: #666;
-	float: right;
-	font-size: .80em;
+	font-size: 0.75em;
 	font-style: italic;
-	text-align: right;
 }
 
 
@@ -280,5 +247,8 @@ th {
 	#header,
 	#footer {
 		display: none;
+	}
+	body {
+		font-size: 8pt;
 	}
 }
