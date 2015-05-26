@@ -9,4 +9,3 @@
 * Official plugin download: http://wordpress.org/plugins/woocommerce-delivery-notes/
 * Report issues, bugs and features suggestions: https://github.com/piffpaffpuff/woocommerce-delivery-notes/issues
 * User support forum: http://wordpress.org/support/plugin/woocommerce-delivery-notes
-* Translations platform: http://translate.wpautobahn.com/projects/wordpress-plugins-deckerweb/woocommerce-delivery-notes
